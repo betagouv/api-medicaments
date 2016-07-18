@@ -59,4 +59,20 @@ describe('the parser file', () => {
       parserStream.end()
     })
   })
+
+    describe('when there is a array field', () => {
+    it('return the string', (done) => {
+      const line = "61266250	A 313 200 000 UI POUR CENT, pommade	pommade	cutane; oral	Autorisation active	Procédure nationale	Commercialisée	12/03/1998			 PHARMA DEVELOPPEMENT	Non"
+      const headers = { voie : { position: 3, type: 'array'}}
+      const parserStream = new ParserStream(headers)
+      parserStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0]).to.deep.equal({voie: ['cutane', 'oral'] });
+          done();
+        })
+      parserStream.write(line)
+      parserStream.end()
+    })
+  })
 })

@@ -33,6 +33,10 @@ function parseField(rawValue, parseOption) {
   switch (parseOption.type) {
     case 'integer':
       return parseInt(rawValue)
+    case 'array':
+      return rawValue
+                .split(';')
+                .map((item) => { return item.trim() })
     default:
       return rawValue;
   }
