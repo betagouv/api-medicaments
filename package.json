@@ -3,12 +3,21 @@
   "version": "0.1.0",
   "description": "API of the desctription of all the french drugs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "istanbul cover --print details _mocha -- -R spec import/test/** --recursive"
   },
   "repository": {
     "type": "git",
     "url": "github.com/sgmap/api-medicaments"
   },
   "author": "Thibaut Géry",
-  "license": "AGPL-3.0"
+  "license": "AGPL-3.0",
+  "dependencies": {
+    "iconv-lite": "0.4.13"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "istanbul": "0.4.4",
+    "memorystream": "0.3.1",
+    "mocha": "2.5.3"
+  }
 }
