@@ -1,0 +1,14 @@
+{
+  "name": "api-medicaments",
+  "version": "0.1.0",
+  "description": "API of the desctription of all the french drugs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/sgmap/api-medicaments"
+  },
+  "author": "Thibaut Géry",
+  "license": "AGPL-3.0"
+}
