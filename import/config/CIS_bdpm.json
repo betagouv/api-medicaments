@@ -1,0 +1,6 @@
+{
+  "cis":  { "position": 0, "type": "integer"},
+  "nom": { "position": 1},
+  "formePharmaceutique":  { "position": 2},
+  "voiesAdmnistration" :  { "position": 3, "type": "array"}
+}
