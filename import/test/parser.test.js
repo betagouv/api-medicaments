@@ -1,7 +1,6 @@
 const ParserStream = require('../StreamParser')
 const expect = require('chai').expect
 const MemoryStream = require('memorystream');
-const fs = require('fs')
 
 
 describe('the parser file', () => {

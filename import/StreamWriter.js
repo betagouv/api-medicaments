@@ -1,17 +1,22 @@
 const iconv = require('iconv-lite');
 const stream = require('stream');
+const couchbase = require('couchbase');
+
 
 
 class WriterStream extends stream.Writable {
-  constructor() {
+  constructor(  cbCluster = new couchbase.Cluster('couchbase://127.0.0.1:8091'),
+                bucket = 'medicaments') {
     super({
       objectMode: true
     });
+    this.bucket = cbCluster.openBucket(bucket);
   }
 
   _write(chunk, encoding, callback) {
-    console.log('OUT : ' + JSON.stringify(chunk))
-    callback();
+    this.bucket.upsert(chunk.cis, chunk, function(err, res) {
+      callback(err);
+    });
   }
 }
 
