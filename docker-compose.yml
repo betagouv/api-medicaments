@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  app:
+    image: couchbase:community
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
+    volumes:
+      - ./data:/opt/couchbase/var/lib/couchbase/data
