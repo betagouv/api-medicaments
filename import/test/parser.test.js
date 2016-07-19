@@ -1,4 +1,3 @@
-const parser = require('../parser')
 const ParserStream = require('../StreamParser')
 const expect = require('chai').expect
 const MemoryStream = require('memorystream');
@@ -60,7 +59,7 @@ describe('the parser file', () => {
     })
   })
 
-    describe('when there is a array field', () => {
+  describe('when there is a array field', () => {
     it('return the string', (done) => {
       const line = "61266250	A 313 200 000 UI POUR CENT, pommade	pommade	cutane; oral	Autorisation active	Procédure nationale	Commercialisée	12/03/1998			 PHARMA DEVELOPPEMENT	Non"
       const headers = { voie : { position: 3, type: 'array'}}
@@ -68,9 +67,53 @@ describe('the parser file', () => {
       parserStream
         .pipe(memStream)
         .on('finish', () => {
-          expect(memStream.queue[0]).to.deep.equal({voie: ['cutane', 'oral'] });
+          expect(memStream.queue[0]).to.deep.equal({ voie: ['cutane', 'oral'] });
           done();
         })
+      parserStream.write(line)
+      parserStream.end()
+    })
+  })
+
+  describe('when there is a boolean field', () => {
+    it('return the true when "Oui"', (done) => {
+      const line = "61266250	A 313 200 000 UI POUR CENT, pommade	pommade	cutane; oral	Autorisation active	Procédure nationale	Commercialisée	12/03/1998			 PHARMA DEVELOPPEMENT	Oui"
+      const headers = { boolean : { position: 11, type: 'boolean'}}
+      const parserStream = new ParserStream(headers)
+      parserStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0]).to.deep.equal({ boolean: true });
+          done();
+        })
+      parserStream.write(line)
+      parserStream.end()
+    })
+
+    it('return the false when "Non"', (done) => {
+      const line = "61266250	A 313 200 000 UI POUR CENT, pommade	pommade	cutane; oral	Autorisation active	Procédure nationale	Commercialisée	12/03/1998			 PHARMA DEVELOPPEMENT	Non"
+      const headers = { boolean : { position: 11, type: 'boolean'}}
+      const parserStream = new ParserStream(headers)
+      parserStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0]).to.deep.equal({ boolean: false });
+          done();
+        })
+      parserStream.write(line)
+      parserStream.end()
+    })
+
+    it('return null when is not defined', (done) => {
+      const line = "61266250	A 313 200 000 UI POUR CENT, pommade	pommade	cutane; oral	Autorisation active	Procédure nationale	Commercialisée	12/03/1998			 PHARMA DEVELOPPEMENT	Nond"
+      const headers = { boolean : { position: 11, type: 'boolean'}}
+      const parserStream = new ParserStream(headers)
+      parserStream
+        .on('error', (err) => {
+          expect(err).to.deep.equal(new Error("Impossible to parse the boolean : \"Nond\""));
+          done();
+        })
+        .pipe(memStream)
       parserStream.write(line)
       parserStream.end()
     })

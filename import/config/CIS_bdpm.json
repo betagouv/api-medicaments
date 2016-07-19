@@ -10,5 +10,5 @@
   "StatutBdm" :  { "position": 8 },
   "numeroAutorisationEuropeen" :  { "position": 9 },
   "titulaire" :  { "position": 10, "type": "array" },
-  "surveillanceRenforcee" :  { "position": 11 }
+  "surveillanceRenforcee" :  { "position": 11, "type": "boolean" }
 }
