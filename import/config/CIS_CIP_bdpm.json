@@ -1,0 +1,19 @@
+{
+  "key": {
+    "name": "presentation",
+    "type": "array"
+  },
+  "mapping": {
+    "cis":  { "position": 0 },
+    "cip": { "position": 1, "type": "integer" },
+    "libelle":  { "position": 2 },
+    "statutAdministratif" :  { "position": 3 },
+    "etatCommercialisation" :  { "position": 4 },
+    "dateDeclaration" :  { "position": 5 },
+    "CIP13" :  { "position": 6, "type": "integer" },
+    "agrementCollectivite" :  { "position": 7, "type": "boolean"},
+    "tauxRemboursement" :  { "position": 8, "type": "array"},
+    "prix" :  { "position": 9 },
+    "indicationRemboursement" :  { "position": 10 }
+  }
+}
