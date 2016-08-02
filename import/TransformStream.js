@@ -2,11 +2,12 @@ const stream = require('stream');
 
 
 class TransformStream extends stream.Transform {
-  constructor(headers) {
+  constructor(config) {
     super({
       objectMode: true
     });
-    this.headers = headers
+    this.key = config.key
+    this.headers = config.mapping
   }
 
   _transform(array, encoding, callback) {
@@ -17,7 +18,7 @@ class TransformStream extends stream.Transform {
         const rawValue = array[this.headers[key].position]
         data[key] = parseField(rawValue, parseOption)
       });
-      this.push(data)
+      this.push({key: this.key, data})
       callback();
     } catch(e) {
       callback(e)

@@ -26,7 +26,7 @@ describe('the writer file', () => {
             done();
           });
         })
-      streamWriter.write(doc)
+      streamWriter.write({data: doc})
       streamWriter.end()
     })
   })

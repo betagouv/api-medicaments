@@ -1,14 +1,16 @@
 {
-  "cis":  { "position": 0 },
-  "nom": { "position": 1 },
-  "formePharmaceutique":  { "position": 2 },
-  "voiesAdmnistration" :  { "position": 3, "type": "array"},
-  "statusAutorisation" :  { "position": 4 },
-  "typeAutorisation" :  { "position": 5 },
-  "etatCommercialisation" :  { "position": 6 },
-  "dateMiseSurLeMarche" :  { "position": 7 },
-  "StatutBdm" :  { "position": 8 },
-  "numeroAutorisationEuropeen" :  { "position": 9 },
-  "titulaire" :  { "position": 10, "type": "array" },
-  "surveillanceRenforcee" :  { "position": 11, "type": "boolean" }
+  "mapping": {
+    "cis":  { "position": 0 },
+    "nom": { "position": 1 },
+    "formePharmaceutique":  { "position": 2 },
+    "voiesAdmnistration" :  { "position": 3, "type": "array"},
+    "statusAutorisation" :  { "position": 4 },
+    "typeAutorisation" :  { "position": 5 },
+    "etatCommercialisation" :  { "position": 6 },
+    "dateMiseSurLeMarche" :  { "position": 7 },
+    "StatutBdm" :  { "position": 8 },
+    "numeroAutorisationEuropeen" :  { "position": 9 },
+    "titulaire" :  { "position": 10, "type": "array" },
+    "surveillanceRenforcee" :  { "position": 11, "type": "boolean" }
+  }
 }
