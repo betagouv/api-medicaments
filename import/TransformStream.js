@@ -30,6 +30,8 @@ function parseField(rawValue, parseOption) {
   switch (parseOption.type) {
     case 'integer':
       return parseInt(rawValue)
+    case 'float':
+      return parseFloat(rawValue)
     case 'boolean':
       if(rawValue === "Oui" || rawValue === "oui") return true;
       if(rawValue === "Non" || rawValue === "non") return false;

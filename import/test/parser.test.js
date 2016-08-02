@@ -60,6 +60,22 @@ describe('the parser file', () => {
     })
   })
 
+  describe('when there is a float field', () => {
+    it('return the string', (done) => {
+      const array = ["34.89", "toto", "tutu"]
+      const config = { mapping: { id : { position: 0, type: 'float'}}}
+      const transformStream = new TransformStream(config)
+      transformStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0].data).to.deep.equal({id: 34.89 });
+          done();
+        })
+      transformStream.write(array)
+      transformStream.end()
+    })
+  })
+
   describe('when there is a array field', () => {
     it('return the string', (done) => {
       const array = ["34", "toto; tata", "tutu"]
