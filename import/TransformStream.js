@@ -1,8 +1,7 @@
-const iconv = require('iconv-lite');
 const stream = require('stream');
 
 
-class ParseStream extends stream.Transform {
+class TransformStream extends stream.Transform {
   constructor(headers) {
     super({
       objectMode: true
@@ -10,14 +9,12 @@ class ParseStream extends stream.Transform {
     this.headers = headers
   }
 
-  _transform(chunk, encoding, callback) {
-    const line = decodeFromBinary(chunk)
-    const fields = line.split('\t');
+  _transform(array, encoding, callback) {
     try {
       let data = {}
       Object.keys(this.headers).forEach((key) => {
         const parseOption = this.headers[key]
-        const rawValue = fields[this.headers[key].position]
+        const rawValue = array[this.headers[key].position]
         data[key] = parseField(rawValue, parseOption)
       });
       this.push(data)
@@ -26,11 +23,6 @@ class ParseStream extends stream.Transform {
       callback(e)
     }
   }
-}
-
-
-function decodeFromBinary(data) {
-  return iconv.decode(Buffer.from(data) ,'iso-8859-1')
 }
 
 function parseField(rawValue, parseOption) {
@@ -51,4 +43,4 @@ function parseField(rawValue, parseOption) {
 
 }
 
-module.exports = ParseStream
+module.exports = TransformStream
