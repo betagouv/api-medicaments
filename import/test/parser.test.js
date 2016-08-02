@@ -105,6 +105,34 @@ describe('the parser file', () => {
       transformStream.end()
     })
 
+    it('return the true when "oui"', (done) => {
+      const array = ["34", "toto, tata", "oui"]
+      const config = { mapping: { boolean : { position: 2, type: 'boolean'}}}
+      const transformStream = new TransformStream(config)
+      transformStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0].data).to.deep.equal({ boolean: true });
+          done();
+        })
+      transformStream.write(array)
+      transformStream.end()
+    })
+
+    it('return the false when "non"', (done) => {
+      const array = ["34", "toto, tata", "non"]
+      const config = { mapping: { boolean : { position: 2, type: 'boolean'}}}
+      const transformStream = new TransformStream(config)
+      transformStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0].data).to.deep.equal({ boolean: false });
+          done();
+        })
+      transformStream.write(array)
+      transformStream.end()
+    })
+
     it('throw an error when is not defined', (done) => {
       const array = ["34", "toto, tata", "nond"]
       const config = { mapping: { boolean : { position: 2, type: 'boolean'}}}

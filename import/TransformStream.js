@@ -31,8 +31,8 @@ function parseField(rawValue, parseOption) {
     case 'integer':
       return parseInt(rawValue)
     case 'boolean':
-      if(rawValue === "Oui") return true;
-      if(rawValue === "Non") return false;
+      if(rawValue === "Oui" || rawValue === "oui") return true;
+      if(rawValue === "Non" || rawValue === "non") return false;
       throw new Error("Impossible to parse the boolean : \"" + rawValue + "\"")
     case 'array':
       return rawValue
