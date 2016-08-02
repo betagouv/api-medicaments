@@ -7,4 +7,4 @@ services:
       - 8091-8094:8091-8094
       - 11210:11210
     volumes:
-      - ./data:/opt/couchbase/var/lib/couchbase/data
+      - ./cbData:/opt/couchbase/var/lib/couchbase/data
