@@ -38,20 +38,60 @@ describe('the writer file', () => {
         bucket.upsert(baseDoc.cis, baseDoc, done)
       })
 
-      it('adds the object to the base object under the correct key', (done) => {
-        const key = 'tutu'
-        const leafdoc = { cis: '1234', data: 'titi'}
-        const streamWriter = new StreamWriter(cbCluster, bucketName)
-        streamWriter
-          .on('finish', () => {
-            bucket.get(leafdoc.cis, function(err, result) {
-              if (err) return  done(err);
-              expect(result.value[key]).to.deep.equal(leafdoc);
-              done();
-            });
+      describe('when the key is a object', () => {
+        it('adds the object to the base object under the correct key', (done) => {
+          const key = {name:'tutu', type: 'object'}
+          const leafdoc = { cis: '1234', data: 'titi'}
+          const streamWriter = new StreamWriter(cbCluster, bucketName)
+          streamWriter
+            .on('finish', () => {
+              bucket.get(leafdoc.cis, function(err, result) {
+                if (err) return  done(err);
+                expect(result.value[key.name]).to.deep.equal(leafdoc);
+                done();
+              });
+            })
+          streamWriter.write({key, data: leafdoc})
+          streamWriter.end()
+        })
+      })
+
+      describe('when the key is a array', () => {
+        it('create an array to the base object under the correct key', (done) => {
+          const key = {name:'tutu', type: 'array'}
+          const leafdoc = { cis: '1234', data: 'titi'}
+          const streamWriter = new StreamWriter(cbCluster, bucketName)
+          streamWriter
+            .on('finish', () => {
+              bucket.get(leafdoc.cis, function(err, result) {
+                if (err) return  done(err);
+                expect(result.value[key.name][0]).to.deep.equal(leafdoc);
+                done();
+              });
+            })
+          streamWriter.write({key, data: leafdoc})
+          streamWriter.end()
+        })
+
+        describe('when there is already a data', () =>  {
+          it('create an array to the base object under the correct key', (done) => {
+            const key = {name:'tutu', type: 'array'}
+            const leafdoc1 = { cis: '1234', data: 'titi'}
+            const leafdoc2 = { cis: '1234', data: 'koko'}
+            const streamWriter = new StreamWriter(cbCluster, bucketName)
+            streamWriter
+              .on('finish', () => {
+                bucket.get(leafdoc2.cis, function(err, result) {
+                  if (err) return  done(err);
+                  expect(result.value[key.name][1]).to.deep.equal(leafdoc2);
+                  done();
+                });
+              })
+            streamWriter.write({key, data: leafdoc1})
+            streamWriter.write({key, data: leafdoc2})
+            streamWriter.end()
           })
-        streamWriter.write({key, data: leafdoc})
-        streamWriter.end()
+        })
       })
     })
 

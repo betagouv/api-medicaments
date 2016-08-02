@@ -19,14 +19,26 @@ class WriterStream extends stream.Writable {
     if(key) {
       bucket.get(data.cis, (err, res) => {
         if(err) return callback(err)
-        const newObject = res.value
-        newObject[key] = data
+        const newObject = addTheData(res.value, key, data)
         bucket.upsert(data.cis, newObject, {cas: res.cas},  callback);
       });
     } else {
       bucket.upsert(data.cis, data, callback);
     }
   }
+}
+
+function addTheData(oldValue, key, data) {
+  const newObject = oldValue
+  if(key.type === 'array') {
+    if(!newObject[key.name]) {
+      newObject[key.name] = []
+    }
+    newObject[key.name].push(data)
+  } else {
+    newObject[key.name] = data
+  }
+  return newObject
 }
 
 module.exports = WriterStream
