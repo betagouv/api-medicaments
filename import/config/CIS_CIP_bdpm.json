@@ -13,7 +13,7 @@
     "CIP13" :  { "position": 6, "type": "integer" },
     "agrementCollectivite" :  { "position": 7, "type": "boolean"},
     "tauxRemboursement" :  { "position": 8, "type": "array"},
-    "prix" :  { "position": 9 },
+    "prix" :  { "position": 9 , "type": "float"},
     "indicationRemboursement" :  { "position": 10 }
   }
 }
