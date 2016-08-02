@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 // vi: ft=javascript
 
-const main = require('../import/main')
-
-main()
+const importData = require('../import')
+const startTimestamp = new Date().getTime()
+importData(() => {
+  const duration = new Date().getTime() - startTimestamp
+  console.log(`done in ${duration} seconds`)
+  process.exit(0)
+})
