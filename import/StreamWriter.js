@@ -14,9 +14,17 @@ class WriterStream extends stream.Writable {
   }
 
   _write(chunk, encoding, callback) {
-    this.bucket.upsert(chunk.data.cis, chunk.data, function(err, res) {
-      callback(err);
-    });
+    const { key, data } = chunk
+    const bucket = this.bucket;
+    if(key) {
+      bucket.get(data.cis, (err, res) => {
+        const newObject = res.value
+        newObject[key] = data
+        bucket.upsert(data.cis, newObject, callback);
+      });
+    } else {
+      bucket.upsert(data.cis, data, callback);
+    }
   }
 }
 
