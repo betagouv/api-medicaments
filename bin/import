@@ -4,7 +4,7 @@
 const importData = require('../import')
 const startTimestamp = new Date().getTime()
 importData(() => {
-  const duration = new Date().getTime() - startTimestamp
+  const duration = (new Date().getTime() - startTimestamp) / 1000
   console.log(`done in ${duration} seconds`)
   process.exit(0)
 })
