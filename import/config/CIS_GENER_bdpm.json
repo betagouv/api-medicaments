@@ -1,0 +1,12 @@
+{
+  "key": {
+    "name": "generique",
+    "type": "array"
+  },
+  "mapping": {
+    "identifiantGenerique":  { "position": 0 },
+    "libelleGenerique": { "position": 1, "type": "integer" },
+    "cis":  { "position": 2 },
+    "type" :  { "position": 3 }
+  }
+}
