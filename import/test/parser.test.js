@@ -92,6 +92,29 @@ describe('the parser file', () => {
     })
   })
 
+  describe('when there is a enum field', () => {
+    it('return the correct', (done) => {
+      const array = ["34", "toto; tata", "tutu"]
+      const config = { mapping: { voie : {
+        position: 2,
+        type: 'enum',
+        options: {
+          'tutu': 'prout',
+          'toto': 'proot',
+        }
+      }}}
+      const transformStream = new TransformStream(config)
+      transformStream
+        .pipe(memStream)
+        .on('finish', () => {
+          expect(memStream.queue[0].data).to.deep.equal({ voie: 'prout' });
+          done();
+        })
+      transformStream.write(array)
+      transformStream.end()
+    })
+  })
+
   describe('when there is a boolean field', () => {
     it('return the true when "Oui"', (done) => {
       const array = ["34", "toto, tata", "Oui"]

@@ -16,7 +16,7 @@ class TransformStream extends stream.Transform {
       Object.keys(this.headers).forEach((key) => {
         const parseOption = this.headers[key]
         const rawValue = array[this.headers[key].position]
-        data[key] = parseField(rawValue, parseOption)
+        data[key] = parseField(rawValue, parseOption, key)
       });
       this.push({key: this.key, data})
       callback();
@@ -26,7 +26,7 @@ class TransformStream extends stream.Transform {
   }
 }
 
-function parseField(rawValue, parseOption) {
+function parseField(rawValue, parseOption, key) {
   switch (parseOption.type) {
     case 'integer':
       return parseInt(rawValue)
@@ -40,6 +40,8 @@ function parseField(rawValue, parseOption) {
       return rawValue
                 .split(';')
                 .map((item) => { return item.trim() })
+    case 'enum':
+      return parseOption.options[rawValue]
     default:
       return rawValue;
   }
