@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+// vi: ft=javascript
+
+const couchbase = require('couchbase')
+const async = require('async')
+const N1qlQuery = couchbase.N1qlQuery
+
+const bucketName = 'medicaments';
+const cbCluster = new couchbase.Cluster('couchbase://127.0.0.1:8091');
+const bucket = cbCluster.openBucket(bucketName);
+
+const indexQuery = N1qlQuery.fromString("CREATE PRIMARY INDEX ON `" + bucketName + "` USING GSI;");
+bucket.query(indexQuery,(err) => {
+  if(err) return console.error(err)
+  const query = N1qlQuery.fromString("SELECT cis FROM "+ bucketName);
+  bucket.query(query, (err, results) => {
+    if(err) return done(err)
+    async.each(results, (result, callback) => {
+      bucket.remove(result.cis, callback);
+    }, (err) => {
+      if(err) {
+        console.error(err)
+        process.exit(1)
+      }
+      console.log('index cleaned')
+      process.exit(0)
+    });
+  })
+})
