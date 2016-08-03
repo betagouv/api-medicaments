@@ -1,9 +1,13 @@
 const insertFile = require('./insertFile');
+const async = require('async')
 
 module.exports = function(callback) {
-  const fileName = 'CIS_bdpm'
-  insertFile({
-    name: fileName,
-    path: __dirname + '/../data/'+ fileName +'.txt'
-  }, callback)
+  const fileNames = ['CIS_bdpm', 'CIS_CIP_bdpm']
+  const files = fileNames.map((item) => {
+    return {
+      name: item,
+      path: __dirname + '/../data/'+ item +'.txt'
+    }
+  })
+  async.eachSeries(files, insertFile, callback);
 }
