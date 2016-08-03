@@ -18,7 +18,12 @@ class WriterStream extends stream.Writable {
     const bucket = this.bucket;
     if(key) {
       bucket.get(data.cis, (err, res) => {
-        if(err) return callback(err)
+        if(err) {
+          if(err.code !== 13) {
+            return callback(err)
+          }
+          return bucket.upsert(data.cis, addTheData({}, key, data), callback);
+        }
         const newObject = addTheData(res.value, key, data)
         bucket.upsert(data.cis, newObject, {cas: res.cas},  callback);
       });

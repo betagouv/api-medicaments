@@ -12,6 +12,7 @@
   "author": "Thibaut Géry",
   "license": "AGPL-3.0",
   "dependencies": {
+    "async": "2.0.1",
     "couchbase": "2.2.1",
     "csv-parse": "1.1.7",
     "iconv-lite": "0.4.13"
