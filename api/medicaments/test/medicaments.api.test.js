@@ -3,15 +3,24 @@ const serverTest = require('./../../test/utils/server');
 
 
 describe('Medicaments API', () => {
-  var server = serverTest();
-  var api = server.api;
+  const server = serverTest();
+  const api = server.api
+  const bucket = server.bucket
 
   describe("When requesting /api/medicaments",  () => {
-    it('replies in json', (done) => {
+
+    const cis = '45678873'
+    const doc = { cis }
+    
+    beforeEach((done) => {
+      bucket.upsert(cis, doc, done)
+    })
+
+    it('replies the correct document', (done) => {
       api()
-        .get('/api/medicaments/65648393')
+        .get('/api/medicaments/' + cis)
         .expect("content-type", /json/)
-        .expect(200, done)
+        .expect(200, doc, done)
     });
   });
 });

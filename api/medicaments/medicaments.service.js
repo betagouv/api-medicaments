@@ -5,7 +5,7 @@ const couchbase = require('couchbase-promises')
 
 class MedicamentsService {
   constructor(options) {
-    this.bucket = options.bucket
+    this.bucket = options.cb.bucket
   }
 
   getByCis(cis) {

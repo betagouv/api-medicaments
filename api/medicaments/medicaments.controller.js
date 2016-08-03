@@ -1,10 +1,16 @@
-'use strict';
+const MedicamentsService = require('./medicaments.service')
 
 class MedicamentsController {
-
-  get(req, res) {
+  constructor(options) {
+    this.medicamentsService = new MedicamentsService(options)
+  }
+  get(req, res, next) {
     const cis = req.params.cis
-    return res.json('pong')
+    this.medicamentsService.getByCis(cis)
+      .then((result) => {
+        return res.json(result)
+      })
+      .catch(next)
   }
 }
 

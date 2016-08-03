@@ -5,9 +5,9 @@ var Controller = require('./medicaments.controller');
 var router = express.Router();
 
 module.exports = function(options){
-  var medicamentsController = new Controller(options);
+  const medicamentsController = new Controller(options);
 
-  router.get('/:cis', medicamentsController.get);
+  router.get('/:cis', medicamentsController.get.bind(medicamentsController));
 
   return router
 }

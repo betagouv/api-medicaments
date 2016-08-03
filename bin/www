@@ -22,7 +22,11 @@ const logger = bunyan.createLogger({
 
 var server = new Server({
   port: nconf.get('port'),
-  logger: logger
+  logger: logger,
+  cb: {
+    bucketName: nconf.get('cb:bucketName'),
+    connectionString: nconf.get('cb:connectionString')
+  }
 });
 
 server.start(function (err) {
