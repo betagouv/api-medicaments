@@ -1,0 +1,8 @@
+{
+  "port": 3004,
+  "appname": "api-medicament",
+  "log": {
+    "level": "debug",
+    "format": "simple"
+  }
+}

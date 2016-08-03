@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+// vi: ft=javascript
+
+const bunyan = require('bunyan');
+const bunyanFormat = require('bunyan-format');
+const nconf = require('nconf');
+const Server = require('../api/server');
+const url = require('url');
+
+nconf.env({
+  separator: '_'
+}).argv();
+nconf.defaults(require('../api/defaults'));
+
+const logger = bunyan.createLogger({
+  name: nconf.get('appname'),
+  level: nconf.get('log:level'),
+  stream: bunyanFormat({
+    outputMode: nconf.get('log:format')
+  })
+});
+
+var server = new Server({
+  port: nconf.get('port'),
+  logger: logger
+});
+
+server.start(function (err) {
+  if (err) {
+    logger.fatal({error: err}, 'cannot recover from previous errors. shutting down now. error was', err.stack);
+    setTimeout(process.exit.bind(null, 99), 10);
+  }
+  logger.info('Sever successfully started.');
+});
