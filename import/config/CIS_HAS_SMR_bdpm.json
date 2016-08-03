@@ -1,0 +1,14 @@
+{
+  "key": {
+    "name": "serviceMedicalRendu",
+    "type": "array"
+  },
+  "mapping": {
+    "cis":  { "position": 0 },
+    "codeHauteAutoriteSante": { "position": 1, "type": "integer" },
+    "motifEvaluation":  { "position": 2, "type": "integer" },
+    "dateEvaluation" :  { "position": 3 },
+    "valeurSMR" :  { "position": 4 },
+    "libelleSMR" :  { "position": 5 }
+  }
+}
