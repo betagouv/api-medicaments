@@ -11,7 +11,10 @@
     "etatCommercialisation" :  { "position": 4 },
     "dosageSubstance" :  { "position": 5 },
     "referenceDosage" :  { "position": 6 },
-    "natureComposant" :  { "position": 7 },
+    "natureComposant" :  { "position": 7,  "type": "enum", "options": {
+      "SA": "principe actif",
+      "ST": "fraction thérapeutique"
+    }} ,
     "LienSubtanceActivesEtFractionsTherapeutiques" :  { "position": 8 }
   }
 }

@@ -5,6 +5,11 @@
   },
   "mapping": {
     "cis":  { "position": 0 },
-    "conditionPrescription": { "position": 1}
+    "conditionPrescription": { "position": 1, "type": "enum", "options": {
+      "0": "princeps",
+      "1": "générique",
+      "2": "génériques par complémentarité posologique",
+      "3": "générique substituable"
+    }}
   }
 }
