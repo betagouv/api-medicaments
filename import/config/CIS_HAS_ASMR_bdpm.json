@@ -1,0 +1,14 @@
+{
+  "key": {
+    "name": "ameliorationServiceMedicalRendu",
+    "type": "array"
+  },
+  "mapping": {
+    "cis":  { "position": 0 },
+    "codeHauteAutoriteSante": { "position": 1, "type": "integer" },
+    "motifEvaluation":  { "position": 2, "type": "integer" },
+    "dateEvaluation" :  { "position": 3 },
+    "valeurASMR" :  { "position": 4 },
+    "libelleASMR" :  { "position": 5 }
+  }
+}
