@@ -1,0 +1,10 @@
+{
+  "key": {
+    "name": "conditionsPrescription",
+    "type": "array"
+  },
+  "mapping": {
+    "cis":  { "position": 0 },
+    "conditionPrescription": { "position": 1}
+  }
+}
