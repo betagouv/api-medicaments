@@ -11,13 +11,13 @@ echo "bucketNames : $bucketNames"
 
 sleep 25;
 
-couchbase-cli  cluster-edit -c $host:8091 \
+couchbase-cli  cluster-init -c $host:8091 \
                   --user=$user \
                   --password=$password \
+                  --services=data,index,query \
                   --cluster-username=$user \
                   --cluster-password=$password \
-                  --cluster-ramsize=2048 \
-                  --service=data,index,query;
+                  --cluster-ramsize=2048;
 
 couchbase-cli  setting-cluster -c $host:8091 \
                 --user=$user \
