@@ -1,6 +1,4 @@
 #!/bin/bash
-set -x
-
 host=$1
 user=$2
 password=$3
