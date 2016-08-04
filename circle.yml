@@ -1,0 +1,10 @@
+machine:
+  node:
+    version: 6.3.0
+  services:
+    - couchbase-server
+
+
+test:
+  pre:
+    - ./bin/prepareDataBase.sh localhost admin tototiti
