@@ -9,6 +9,7 @@ dependencies:
     - "~/docker"
 
   override:
+    - echo ${DOCKER_USER}
     - if [[ -e ~/docker/image_cb.tar ]]; then docker load -i ~/docker/image_cb.tar; fi
     - if [[ -e ~/docker/image_node.tar ]]; then docker load -i ~/docker/image_node.tar; fi
     - docker pull couchbase:community
