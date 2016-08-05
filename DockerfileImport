@@ -1,0 +1,16 @@
+FROM node:6
+
+WORKDIR /opt/medicaments
+
+# run the import script
+ADD ./package.json ./package.json
+RUN npm install --production
+
+
+ADD ./bin /opt/medicaments/bin
+ADD ./data /opt/medicaments/data
+ADD ./import ./import
+ADD ./defaults.json .
+
+
+CMD ./bin/prepareDataBase.sh

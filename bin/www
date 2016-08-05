@@ -10,7 +10,7 @@ const url = require('url');
 nconf.env({
   separator: '_'
 }).argv();
-nconf.defaults(require('../api/defaults'));
+nconf.defaults(require('../defaults'));
 
 const logger = bunyan.createLogger({
   name: nconf.get('appname'),

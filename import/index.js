@@ -1,7 +1,8 @@
 const insertFile = require('./insertFile');
 const async = require('async')
+const couchbase = require('couchbase')
 
-module.exports = function(callback) {
+module.exports = function(options, callback) {
   const fileNames = [
     'CIS_bdpm',
     'CIS_CIP_bdpm',
@@ -11,10 +12,14 @@ module.exports = function(callback) {
     'CIS_GENER_bdpm',
     'CIS_CPD_bdpm'
   ]
+  const cbCluster = new couchbase.Cluster(options.cb.connectionString)
+  
   const files = fileNames.map((item) => {
     return {
       name: item,
-      path: __dirname + '/../data/'+ item +'.txt'
+      path: __dirname + '/../data/'+ item +'.txt',
+      cbCluster,
+      bucket: options.cb.bucket
     }
   })
   async.eachSeries(files, insertFile, callback);

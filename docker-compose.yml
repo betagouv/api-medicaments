@@ -14,8 +14,6 @@ services:
     ports:
       - 8091-8094:8091-8094
       - 11210:11210
-    volumes:
-      - ./cbData:/opt/couchbase/var/lib/couchbase/data
 
   configuration:
     image: couchbase:community
@@ -23,9 +21,37 @@ services:
       - cbNetwork
     depends_on:
       - couchbase
-    container_name: config
+    container_name: config.meds
     volumes:
       - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
-    hostname: config
-    #command: ping couchbase.meds
+    hostname: config.meds
     command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti
+
+  import:
+    build:
+      context: .
+      dockerfile: DockerfileImport
+    hostname: import.meds
+    depends_on:
+      - couchbase
+    container_name: import.meds
+    networks:
+      - cbNetwork
+    command: bash -c "sleep 40 && ./bin/import --cb:connectionString=couchbase://couchbase.meds:8091"
+
+
+  api:
+    build:
+      context: .
+      dockerfile: DockerfileAPI
+    networks:
+      - cbNetwork
+    environment:
+      LCB_CNTL_DETAILED_ERRCODES: development
+      cb_connectionString: couchbase://couchbase.meds:8091
+    depends_on:
+      - couchbase
+    hostname: api.med
+    container_name: api.med
+    ports:
+      - 3004:3004

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "API of the desctription of all the french drugs",
   "scripts": {
-    "test": "istanbul cover --print details _mocha -- -R spec import/test/** api/*/test/** --recursive"
+    "test": "istanbul cover --print details _mocha -- -R spec import/test/** api/*/test/** --recursive --timeout 5000",
+    "start": "./bin/www"
   },
   "repository": {
     "type": "git",
