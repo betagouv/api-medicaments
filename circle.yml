@@ -4,12 +4,25 @@ machine:
   services:
     - docker
 
+dependencies:
+  cache_directories:
+    - "~/docker"
+
+  override:
+    - if [[ -e ~/docker/image_cb.tar ]]; then docker load -i ~/docker/image_cb.tar; fi
+    - if [[ -e ~/docker/image_node.tar ]]; then docker load -i ~/docker/image_node.tar; fi
+    - docker pull couchbase:community
+    - docker pull node:6
+    - mkdir -p ~/docker; docker save couchbase:community > ~/docker/image_node.tar
+    - mkdir -p ~/docker; docker save node:6 > ~/docker/image_node.tar
+    - npm install
+
 test:
   pre:
-    - docker --version
     - docker run -d --name couchbase -p 8091-8094:8091-8094 -p 11210:11210 couchbase:community
-    - docker run -t --name configCb --link couchbase:couchbase.meds -v $(pwd)/bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh couchbase:community bash -c "/opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti"
+    - docker run -t --rm --name configCb --link couchbase:couchbase.meds -v $(pwd)/bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh couchbase:community bash -c "/opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti"
   post:
+    - docker stop couchbase
     - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls --verbose
 
 
@@ -18,5 +31,4 @@ deployment:
     branch: publish
     owner: sgmap
     commands:
-      - pwd
-      - ./bin/publish
+      - ./bin/publish.sh
