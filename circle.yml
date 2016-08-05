@@ -11,3 +11,12 @@ test:
     - docker run -t --name configCb --link couchbase:couchbase.meds -v $(pwd)/bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh couchbase:community bash -c "/opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti"
   post:
     - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls --verbose
+
+
+deployment:
+  publish:
+    branch: publish
+    owner: sgmap
+    commands:
+      - pwd
+      - ./bin/publish
