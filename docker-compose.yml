@@ -53,5 +53,6 @@ services:
       - couchbase
     hostname: api.med
     container_name: api.med
+    command: bash -c "sleep 40 && npm start"
     ports:
       - 3004:3004
