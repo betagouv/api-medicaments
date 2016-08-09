@@ -23,10 +23,7 @@ echo "##### Import data"
 ./bin/import
 
 echo "##### Tag images"
-docker commit couchbasePublish betagouv/api-meds-db:$VERSION
 docker tag api-meds-api betagouv/api-meds-api:$VERSION
-
-docker tag -f betagouv/api-meds-db:$VERSION betagouv/api-meds-db:latest
 docker tag -f betagouv/api-meds-api:$VERSION betagouv/api-meds-api:latest
 
 echo "##### Log into docker hub wit $DOCKER_USER"
@@ -34,11 +31,12 @@ docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
 
 
 echo "##### Push images"
-docker push betagouv/api-meds-db:latest
 docker push betagouv/api-meds-api:latest
-
-docker push betagouv/api-meds-db:$VERSION
 docker push betagouv/api-meds-api:$VERSION
+
+echo '##### Create backup data'
+docker run --link couchbasePublish:couchbase.meds -v $(pwd)/export:/var/export -it couchbase:community cbbackup http://couchbase.meds:8091 /var/export/ -u admin -p tototiti
+tar -cvzf meds-db.tar.gz ./export
 
 echo "##### Clean containers"
 docker stop couchbasePublish configCbPublish

@@ -3,6 +3,9 @@ machine:
     version: 6.3.0
   services:
     - docker
+general:
+  artifacts:
+    - meds-db.tar.gz
 
 dependencies:
   cache_directories:
