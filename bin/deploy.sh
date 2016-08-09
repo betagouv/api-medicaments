@@ -8,4 +8,4 @@ wget -qO- "$artifact_url" | tar xvz
 
 docker-compose -f ./docker-compose-prod.yml pull
 docker-compose -f ./docker-compose-prod.yml rm -f --all
-docker-compose -f ./docker-compose-prod.yml up
+docker-compose -f ./docker-compose-prod.yml up -d
