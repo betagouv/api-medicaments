@@ -3,6 +3,9 @@ machine:
     version: 6.3.0
   services:
     - docker
+general:
+  artifacts:
+    - meds-db.tar.gz
 
 dependencies:
   cache_directories:
@@ -28,7 +31,8 @@ test:
 
 deployment:
   publish:
-    branch: publish
+    branch: master
     owner: sgmap
     commands:
       - ./bin/publish.sh
+      - ssh deploy@medicaments.api.gouv.fr cd '/opt/apps/apimedicaments && ./bin/deploy.sh'

@@ -1,3 +1,4 @@
+
 version: '2'
 
 networks:
@@ -5,7 +6,7 @@ networks:
     driver: bridge
 
 services:
-  couchbase:
+  db:
     image: couchbase:community
     hostname: couchbase.meds
     container_name: couchbase.meds
@@ -20,39 +21,34 @@ services:
     networks:
       - cbNetwork
     depends_on:
-      - couchbase
+      - db
     container_name: config.meds
     volumes:
       - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
     hostname: config.meds
     command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti
 
-  import:
-    build:
-      context: .
-      dockerfile: DockerfileImport
-    hostname: import.meds
+  restoreData:
+    image: couchbase:community
+    hostname: restoreData.meds
+    container_name: restoreData.meds
     depends_on:
-      - couchbase
-    container_name: import.meds
+      - db
     networks:
       - cbNetwork
-    command: bash -c "sleep 40 && ./bin/import --cb:connectionString=couchbase://couchbase.meds:8091"
-
-
+    volumes:
+      - ./export:/var/export
+    command: bash -c "sleep 35 && cbrestore /var/export/ http://couchbase.meds:8091 --bucket-destination=medicaments -u admin -p tototiti"
   api:
-    build:
-      context: .
-      dockerfile: DockerfileAPI
+    image: betagouv/api-meds-api
+    environment:
+      cb_connectionString: couchbase://couchbase.meds:8091
     networks:
       - cbNetwork
-    environment:
-      LCB_CNTL_DETAILED_ERRCODES: development
-      cb_connectionString: couchbase://couchbase.meds:8091
     depends_on:
-      - couchbase
+      - db
     hostname: api.med
     container_name: api.med
-    command: bash -c "sleep 40 && npm start"
     ports:
       - 3004:3004
+    command: bash -c "sleep 30 && npm start"
