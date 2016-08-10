@@ -31,8 +31,8 @@ test:
 
 deployment:
   publish:
-    branch: publish
+    branch: master
     owner: sgmap
     commands:
       - ./bin/publish.sh
-      - ssh deploy@medicament.api.gouv.fr '/opt/apps/apimedicaments/bin/deploy.sh'
+      - ssh deploy@medicaments.api.gouv.fr cd '/opt/apps/apimedicaments && ./bin/deploy.sh'
