@@ -35,3 +35,4 @@ deployment:
     owner: sgmap
     commands:
       - ./bin/publish.sh
+      - ssh deploy@medicament.api.gouv.fr '/opt/apps/apimedicaments/bin/deploy.sh'
