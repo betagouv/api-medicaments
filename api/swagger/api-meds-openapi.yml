@@ -1,0 +1,154 @@
+swagger: '2.0'
+info:
+  title: API Medicaments
+  description: Catalogue des médicaments du gouvernement
+  version: 0.1.0
+basePath: /api
+produces:
+  - application/json
+paths:
+  /medicaments/{cis}:
+    get:
+      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      parameters:
+      - name: cis
+        in: path
+        description: Code Identifiant de Spécialité
+        required: true
+        type: integer
+        format: int64
+      responses:
+        '200':
+          description: La liste des API
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Medicament"
+        '404':
+          description: 'Les paramètres fournis sont incorrects ou ne correspondent pas à un medicament'
+          schema:
+            $ref: '#/definitions/Error'
+        default:
+          description: Unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+
+definitions:
+  Medicament:
+    type: object
+    properties:
+      cis:
+        type: string
+      nom:
+        type: string
+      statusAutorisation:
+        type: string
+      typeAutorisation:
+        type: string
+      etatCommercialisation:
+        type: string
+      dateMiseSurLeMarche:
+        type: string
+      StatutBdm:
+        type: string
+      numeroAutorisationEuropeen:
+        type: string
+      titulaire:
+        type: array
+        items:
+          type: string
+      surveillanceRenforcee:
+        type: boolean
+      presentation:
+        type: array
+        items:
+          $ref: '#/definitions/Presentation'
+      composition:
+        type: array
+        items:
+          $ref: '#/definitions/Composition'
+      generique:
+        type: array
+        items:
+          $ref: '#/definitions/Generique'
+      conditionsPrescription:
+        type: array
+        items:
+          $ref: '#/definitions/ConditionPrescription'
+
+  Presentation:
+    type: object
+    properties:
+      cis:
+        type: string
+      cip:
+        type: integer
+        format: int64
+      libelle:
+        type: string
+      statutAdministratif:
+        type: string
+      etatCommercialisation:
+        type: string
+      dateDeclaration:
+        type: string
+      CIP13:
+        type: integer
+        format: int64
+      agrementCollectivite:
+        type: boolean
+      tauxRemboursement:
+        type: array
+        items:
+          type: string
+      prix:
+        type: integer
+        format: int32
+      indecationRembousement:
+        type: string
+
+  Composition:
+    type: object
+    properties:
+      cis:
+        type: string
+      elementPharmaceutique:
+        type: string
+      codeSubstance:
+        type: string
+      denominationSubstance:
+        type: string
+      etatCommercialisation:
+        type: string
+      dosageSubstance:
+        type: string
+      referenceDosage:
+        type: string
+      LienSubtanceActivesEtFractionsTherapeutiques:
+        type: string
+
+  Generique:
+    type: object
+    properties:
+      cis:
+        type: string
+      identifiantGenerique:
+        type: string
+      libelleGenerique:
+        type: string
+      type:
+        type: string
+
+  ConditionPrescription:
+    type: object
+    properties:
+      cis:
+        type: string
+
+  Error:
+    type: object
+    properties:
+      message:
+        type: string
+      error:
+        type: string
