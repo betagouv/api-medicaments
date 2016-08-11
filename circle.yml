@@ -23,7 +23,7 @@ dependencies:
 test:
   pre:
     - docker run -d --name couchbase -p 8091-8094:8091-8094 -p 11210:11210 couchbase:community
-    - docker run -t --rm --name configCb --link couchbase:couchbase.meds -v $(pwd)/bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh couchbase:community bash -c "/opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti medicaments medicamentsTests"
+    - docker run -t --rm --name configCb --link couchbase:couchbase.meds -v $(pwd)/bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh couchbase:community bash -c "/opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti 'medicaments medicamentsTests'"
   post:
     - docker stop couchbase
     - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls --verbose
