@@ -25,7 +25,7 @@ function Server (options) {
   app.set('port', options.port);
   app.set('json spaces', 2);
   app.disable('x-powered-by');
-  app.use(express.static('public'));
+  app.use('/', express.static(__dirname + '/swagger'));
 
   const corsOptions = {
     exposedHeaders: ['Range', 'Content-Range', 'X-Content-Range'],

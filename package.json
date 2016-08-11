@@ -4,7 +4,7 @@
   "description": "API of the desctription of all the french drugs",
   "scripts": {
     "test": "istanbul cover --print details _mocha -- -R spec import/test/** api/*/test/** --recursive --timeout 5000",
-    "start": "./bin/www"
+    "start": "./bin/www --port 3005"
   },
   "repository": {
     "type": "git",
