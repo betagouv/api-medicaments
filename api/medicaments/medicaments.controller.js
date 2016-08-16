@@ -12,6 +12,10 @@ class MedicamentsController {
       })
       .catch(next)
   }
+
+  getByName(req, res) {
+    res.json("Yes")
+  }
 }
 
 module.exports = MedicamentsController;

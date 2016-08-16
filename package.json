@@ -4,6 +4,7 @@
   "description": "API of the desctription of all the french drugs",
   "scripts": {
     "test": "istanbul cover --print details _mocha -- -R spec import/test/** api/*/test/** --recursive --timeout 5000",
+    "watch": "./node_modules/mocha/bin/mocha --watch --recursive import/test/** api/*/test/**",
     "start": "./bin/www"
   },
   "repository": {

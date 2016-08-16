@@ -7,11 +7,11 @@ describe('Medicaments API', () => {
   const api = server.api
   const bucket = server.bucket
 
-  describe("When requesting /api/medicaments",  () => {
+  describe("When requesting /api/medicaments/:cis",  () => {
 
     const cis = '45678873'
     const doc = { cis }
-    
+
     beforeEach((done) => {
       bucket.upsert(cis, doc, done)
     })
@@ -22,5 +22,17 @@ describe('Medicaments API', () => {
         .expect("content-type", /json/)
         .expect(200, doc, done)
     });
+  });
+
+  describe("When requesting /api/medicaments",  () => {
+
+    describe("with correct query",  () => {
+
+      it('replies with code 200', (done) => {
+        api()
+          .get('/api/medicaments?name=test')
+          .expect(200, done)
+        });
+      });
   });
 });
