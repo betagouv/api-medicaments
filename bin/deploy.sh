@@ -1,5 +1,7 @@
 #!/bin/bash
 
+git pull origin master
+
 artifact_name="meds-db.tar.gz"
 branch="master"
 artifact_url="https://circleci.com/api/v1/project/sgmap/api-medicaments/latest/artifacts/0//home/ubuntu/api-medicaments/$artifact_name?branch=$branch&filter=successful"
