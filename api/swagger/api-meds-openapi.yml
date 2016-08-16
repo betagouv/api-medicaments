@@ -1,8 +1,18 @@
 swagger: '2.0'
 info:
-  title: API Medicaments
-  description: Catalogue des médicaments du gouvernement
-  version: 0.1.0
+  title: Base de données publique officielle des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé
+  description: >
+    <br/>
+    <i>Cette API expose les <a href="http://base-donnees-publique.medicaments.gouv.fr/telechargement.php">données</a> de <a href="http://ansm.sante.fr/">ANSM</a> mises à jours le 24/06/2016.</i>
+    <h2>Condition d'utilisation</h2>
+    Les données de l'API sont ouverte selon la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence Ouverte/Open Licence</a>.<br/>
+    <h2>Evolution</h2>
+    Si vous avez des besoins liés à l'utilisation de l'API, vous pouvez :
+    <ul>
+      <li>contribuer directement, le code est ouvert sur <a href="https://github.com/sgmap/api-medicaments">GitHub</a>;</li>
+      <li>envoyer un mail au <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>.</li>
+    </ul>
+  version: 0.2.0
 basePath: /api
 produces:
   - application/json
@@ -19,11 +29,9 @@ paths:
         format: int64
       responses:
         '200':
-          description: La liste des API
+          description: Un Médicament
           schema:
-            type: array
-            items:
-              $ref: "#/definitions/Medicament"
+            $ref: "#/definitions/Medicament"
         '404':
           description: 'Les paramètres fournis sont incorrects ou ne correspondent pas à un medicament'
           schema:
@@ -32,6 +40,51 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
+
+  /medicaments:
+    get:
+      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      parameters:
+      - name: nom
+        in: query
+        description: nom d'un médicament
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: Une liste de médicament correspondant à la requête
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Medicament"
+        default:
+          description: Erreur inattendue
+          schema:
+            $ref: '#/definitions/Error'
+
+  /medicaments/search:
+    get:
+      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      parameters:
+      - name: q
+        in: query
+        description: requête global de recherche
+        required: true
+        type: string
+
+      responses:
+        '200':
+          description: Une liste de médicament correspondant à la requête
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/Medicament"
+        default:
+          description: Erreur inattendue
+          schema:
+            $ref: '#/definitions/Error'
+
 
 definitions:
   Medicament:

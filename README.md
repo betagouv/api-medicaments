@@ -1,4 +1,4 @@
-# Api Médicaments
+# Base de données publique officielle des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé
 
 [![CircleCI](https://circleci.com/gh/sgmap/api-medicaments/tree/master.svg?style=svg)](https://circleci.com/gh/sgmap/api-medicaments/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/sgmap/api-medicaments/badge.svg?branch=ci)](https://coveralls.io/github/sgmap/api-medicaments?branch=master)
