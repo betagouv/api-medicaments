@@ -2,7 +2,8 @@ const StandardError = require('standard-error')
 
 
 const medicamentsValidation = {
-  getByName
+  getByName,
+  search
 }
 
 function getByName(req,res,next){
@@ -12,6 +13,11 @@ function getByName(req,res,next){
   next()
 }
 
-
+function search(req,res,next){
+  if (!req.query.q){
+    return next(new StandardError("le paramètre q est requis", { code: 400 }))
+  }
+  next()
+}
 
 module.exports = medicamentsValidation

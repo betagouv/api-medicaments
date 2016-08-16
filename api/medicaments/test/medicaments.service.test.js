@@ -137,4 +137,49 @@ describe('Medicaments service', () => {
     })
   })
 
+  describe("When searching medicaments globaly",  () => {
+    function createEsResult(hits) {
+      const data = hits.map(item => ({ _source: {doc: item}}))
+
+      return {
+          hits: { total: hits.length, hits: data
+        }
+      }
+    }
+    describe("there is no match",  () => {
+      it('return an empty list', (done) => {
+        const esResult = createEsResult([])
+
+        sandbox.stub(client,"search").returns(Promise.resolve(esResult))
+        medicamentsService.search('doliprane')
+          .then((result) => {
+            expect(result).to.deep.equal([])
+            done()
+          })
+          .catch(done)
+      });
+    })
+
+    describe("there is match",  () => {
+      it('return matched records', (done) => {
+        const esResult = createEsResult([ {test :'coucou'}]);
+
+        const query = {
+          index,
+          q: 'doliprane'
+        }
+
+        sandbox.stub(client,"search").withArgs(query).returns(Promise.resolve(esResult))
+        medicamentsService.search('doliprane')
+          .then((result) => {
+            expect(result).to.deep.equal([{test :'coucou'}])
+            done()
+          })
+          .catch(done)
+      });
+    })
+  })
+
+
+
 });

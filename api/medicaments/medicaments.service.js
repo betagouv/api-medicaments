@@ -35,6 +35,15 @@ class MedicamentsService {
       return results.hits.hits.map(a => a._source.doc)
     })
   }
+
+  search(q){
+    return this.client.search({
+      index: this.indice,
+      q
+    }).then((results) => {
+      return results.hits.hits.map(a => a._source.doc)
+    })
+  }
 }
 
 

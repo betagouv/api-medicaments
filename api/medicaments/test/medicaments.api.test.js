@@ -57,6 +57,37 @@ describe('Medicaments API', () => {
       });
     });
 
+  });
 
+
+  describe("When requesting /api/medicaments/search",  () => {
+
+    const doc = {composant: 'doliprane'}
+
+    beforeEach((done) => {
+      client.create({
+        index: server.esIndice,
+        type: server.esIndice,
+        refresh: true,
+        body: {doc}
+      },done)
+    })
+
+    describe("with correct query",  () => {
+      it('replies with code 200 and matching medecines as body', (done) => {
+        api()
+          .get('/api/medicaments/search?q=doliprane')
+          .expect(200, [doc], done)
+      });
+    });
+
+    describe("with incorrect query",  () => {
+
+      it('replies with code 400', (done) => {
+        api()
+          .get('/api/medicaments/search')
+          .expect(400, done)
+      });
+    });
   });
 });
