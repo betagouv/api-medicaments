@@ -43,7 +43,7 @@ paths:
 
   /medicaments:
     get:
-      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      summary: récupérer des médicaments par nom
       parameters:
       - name: nom
         in: query
@@ -65,7 +65,7 @@ paths:
 
   /medicaments/search:
     get:
-      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      summary: récupérer des médicaments avec une recherche global
       parameters:
       - name: q
         in: query
