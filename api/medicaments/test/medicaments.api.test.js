@@ -30,9 +30,20 @@ describe('Medicaments API', () => {
 
       it('replies with code 200', (done) => {
         api()
-          .get('/api/medicaments?name=test')
+          .get('/api/medicaments?nom=test')
           .expect(200, done)
-        });
       });
+    });
+
+    describe("with incorrect query",  () => {
+
+      it('replies with code 400', (done) => {
+        api()
+          .get('/api/medicaments')
+          .expect(400, done)
+      });
+    });
+
+
   });
 });
