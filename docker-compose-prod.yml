@@ -26,7 +26,7 @@ services:
     volumes:
       - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
     hostname: config.meds
-    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti medicaments es.meds medicaments 
+    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti medicaments es.meds medicaments
 
   restoreData:
     image: couchbase:community
@@ -43,6 +43,7 @@ services:
     image: betagouv/api-meds-api
     environment:
       cb_connectionString: couchbase://couchbase.meds:8091
+      es_host: es.meds:9200
     networks:
       - cbNetwork
     depends_on:
