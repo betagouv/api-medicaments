@@ -6,6 +6,7 @@ describe('Medicaments API', () => {
   const server = serverTest();
   const api = server.api
   const bucket = server.bucket
+  const client = server.client
 
   describe("When requesting /api/medicaments/:cis",  () => {
 
@@ -26,13 +27,25 @@ describe('Medicaments API', () => {
 
   describe("When requesting /api/medicaments",  () => {
 
+    const doc = {nom: 'doliprane'}
+
+    beforeEach((done) => {
+      client.create({
+        index: server.esIndice,
+        type: server.esIndice,
+        refresh: true,
+        body: {doc}
+      },done)
+    })
+
     describe("with correct query",  () => {
 
-      it('replies with code 200', (done) => {
+      it('replies with code 200 and matching medecines as body', (done) => {
         api()
-          .get('/api/medicaments?nom=test')
-          .expect(200, done)
+          .get('/api/medicaments?nom=doliprane')
+          .expect(200, [doc], done)
       });
+
     });
 
     describe("with incorrect query",  () => {

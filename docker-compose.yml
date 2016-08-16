@@ -25,7 +25,7 @@ services:
     volumes:
       - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
     hostname: config.meds
-    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti 'medicaments medicamentsTests' es.meds medicaments 
+    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti 'medicaments medicamentsTests' es.meds medicaments
 
   import:
     build:
@@ -49,6 +49,7 @@ services:
     environment:
       LCB_CNTL_DETAILED_ERRCODES: development
       cb_connectionString: couchbase://couchbase.meds:8091
+      es_host: es.meds:9200
     depends_on:
       - couchbase
     hostname: api.meds

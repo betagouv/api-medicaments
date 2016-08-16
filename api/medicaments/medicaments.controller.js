@@ -13,8 +13,12 @@ class MedicamentsController {
       .catch(next)
   }
 
-  getByName(req, res) {
-    res.json("Yes")
+  getByName(req, res, next) {
+    this.medicamentsService.getByName(req.query.nom)
+      .then((result) => {
+        return res.json(result)
+      })
+      .catch(next)
   }
 }
 
