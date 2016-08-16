@@ -12,6 +12,22 @@ class MedicamentsController {
       })
       .catch(next)
   }
+
+  getByName(req, res, next) {
+    this.medicamentsService.getByName(req.query.nom)
+      .then((result) => {
+        return res.json(result)
+      })
+      .catch(next)
+  }
+
+  search(req, res, next) {
+    this.medicamentsService.search(req.query.q)
+      .then((result) => {
+        return res.json(result)
+      })
+      .catch(next)
+  }
 }
 
 module.exports = MedicamentsController;

@@ -26,7 +26,7 @@ services:
     volumes:
       - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
     hostname: config.meds
-    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti
+    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti medicaments es.meds medicaments 
 
   restoreData:
     image: couchbase:community
@@ -52,3 +52,14 @@ services:
     ports:
       - 3004:3004
     command: bash -c "sleep 30 && npm start"
+
+  es:
+    image: betagouv/api-meds-es
+    container_name: es.meds
+    hostname: es.meds
+    networks:
+      - cbNetwork
+    environment:
+      CB_USER: admin
+      CB_PASSWORD: tototiti
+      ES_USE_IPV4: "true"

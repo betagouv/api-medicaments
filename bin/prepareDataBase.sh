@@ -1,13 +1,20 @@
 #!/bin/bash
+
+#set -e # exit if one command fails
+
 host=$1
 user=$2
 password=$3
 bucketNames=${4:-"medicaments medicamentsTests"}
+elasticsearchHost=$5
+elasticsearchBucket=$6
 
 echo "host : $host"
 echo "user : $user"
 echo "password : $password"
 echo "bucketNames : $bucketNames"
+echo "elasticsearchHost : $elasticsearchHost"
+echo "elasticsearchBucket : $elasticsearchBucket"
 
 sleep 25;
 
@@ -44,3 +51,41 @@ do
             --wait
   fi
 done
+
+if [ ! -z "$elasticsearchHost" ]
+then
+  echo 'creating xdcr cluster to replicate to elasticsearch'
+  couchbase-cli xdcr-setup -c $host:8091 \
+          --user=$user \
+          --password=$password \
+          --create \
+          --xdcr-cluster-name=elasticsearch \
+          --xdcr-hostname=$elasticsearchHost:9091 \
+          --xdcr-username=$user \
+          --xdcr-password=$password \
+          --xdcr-demand-encryption=0
+
+  echo 'wait for ES to start...'
+  sleep 10
+  echo 'create ES index...'
+  curl -XPUT "http://$elasticsearchHost:9200/$elasticsearchBucket/" -d '{
+      "settings" : {
+          "index" : {
+              "number_of_shards" : 1,
+              "number_of_replicas" : 1
+          }
+      }
+  }'
+
+  echo 'start replicating $elasticsearchBucket...'
+  sleep 5
+  couchbase-cli xdcr-replicate -c $host:8091 \
+          --user=$user \
+          --password=$password \
+          --create \
+          --xdcr-cluster-name=elasticsearch \
+          --xdcr-replication-mode=capi \
+          --xdcr-from-bucket=$elasticsearchBucket \
+          --xdcr-to-bucket=$elasticsearchBucket
+fi
+echo 'done'
