@@ -3,14 +3,14 @@ info:
   title: Base de données publique officielle des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé
   description: >
     <br/>
-    <i>Cette API expose les <a href="http://base-donnees-publique.medicaments.gouv.fr/telechargement.php">données</a> de <a href="http://ansm.sante.fr/">ANSM</a> mises à jours le 24/06/2016.</i>
+    <i>Cette API expose les <a href="http://base-donnees-publique.medicaments.gouv.fr/telechargement.php">données</a> de <a href="http://ansm.sante.fr/">ANSM</a> mises à jour le 24/06/2016.</i>
     <h2>Condition d'utilisation</h2>
-    Les données de l'API sont ouverte selon la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence Ouverte/Open Licence</a>.<br/>
+    Les données de l'API sont ouvertes selon la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence Ouverte/Open Licence</a>.<br/>
     <h2>Evolution</h2>
     Si vous avez des besoins liés à l'utilisation de l'API, vous pouvez :
     <ul>
       <li>contribuer directement, le code est ouvert sur <a href="https://github.com/sgmap/api-medicaments">GitHub</a>;</li>
-      <li>envoyer un mail au <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>.</li>
+      <li>envoyer un mail à <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>.</li>
     </ul>
   version: 0.2.0
 basePath: /api
@@ -43,7 +43,7 @@ paths:
 
   /medicaments:
     get:
-      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      summary: récupérer des médicaments par nom
       parameters:
       - name: nom
         in: query
@@ -65,7 +65,7 @@ paths:
 
   /medicaments/search:
     get:
-      summary: récupérer un medicaments en utilisant son Code Identifiant de Spécialité (CIS)
+      summary: récupérer des médicaments avec une recherche global
       parameters:
       - name: q
         in: query
