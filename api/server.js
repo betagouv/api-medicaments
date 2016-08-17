@@ -28,10 +28,12 @@ function Server (options) {
   app.set('port', options.port);
   app.set('json spaces', 2);
   app.disable('x-powered-by');
-  app.use('/', express.static(__dirname + '/swagger'));
+  app.use('/doc', express.static(__dirname + '/swagger'));
 
 
-  app.use(cors());
+  app.use(cors({
+    origin: true
+  }));
 
   app.use(expressBunyanLogger({
     name: "requests",

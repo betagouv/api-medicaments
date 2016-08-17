@@ -1,17 +1,9 @@
 swagger: '2.0'
 info:
-  title: Base de données publique officielle des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé
+  title: Médicapi
   description: >
-    <br/>
-    <i>Cette API expose les <a href="http://base-donnees-publique.medicaments.gouv.fr/telechargement.php">données</a> de <a href="http://ansm.sante.fr/">ANSM</a> mises à jour le 24/06/2016.</i>
-    <h2>Condition d'utilisation</h2>
-    Les données de l'API sont ouvertes selon la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence Ouverte/Open Licence</a>.<br/>
-    <h2>Evolution</h2>
-    Si vous avez des besoins liés à l'utilisation de l'API, vous pouvez :
-    <ul>
-      <li>contribuer directement, le code est ouvert sur <a href="https://github.com/sgmap/api-medicaments">GitHub</a>;</li>
-      <li>envoyer un mail à <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>.</li>
-    </ul>
+    <h2>Base de données publique officielle des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé</h2>
+    Bienvenue sur la documentation intéractive de Médicapi, vous pouvez retrouver une présentation fonctionnelle de l'API <a href="https://medicaments.api.gouv.fr">ici</a>
   version: 0.2.0
 basePath: /api
 produces:
