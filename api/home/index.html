@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" >
+  <meta name="description" content="Présentation">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Médicapi — api.gouv.fr" >
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="Présentation" >
+  <meta property="og:image" content="/img/logo.svg" >
+
+  <title>Médicapi — api.gouv.fr</title>
+
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon" >
+
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/site.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/reset.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/header.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/container.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/button.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/grid.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/input.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/icon.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/segment.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/item.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/image.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/divider.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/card.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/label.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/search.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/table.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/rail.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/list.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/tab.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/menu.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/dropdown.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/transition.min.css">
+  <link rel="stylesheet" type="text/css" class="ui" href="//cdn.jsdelivr.net/semantic-ui/2.2/components/statistic.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/swagger-ui/2.1.3/css/screen.min.css" >
+
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/api.css">
+
+
+
+
+
+  <script src="//cdn.jsdelivr.net/jquery/2.2.1/jquery.js"></script>
+  <script src="//cdn.jsdelivr.net/jquery.ui/1.11.4/jquery-ui.min.js"></script>
+  <script src="//cdn.jsdelivr.net/semantic-ui/2.2/components/transition.min.js"></script>
+  <script src="//cdn.jsdelivr.net/semantic-ui/2.2/components/dropdown.min.js"></script>
+  <script src="//cdn.jsdelivr.net/semantic-ui/2.2/components/tab.min.js"></script>
+  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.jquery.min.js"></script>
+</head>
+
+
+  <body>
+
+    <div id="wrapper">
+      <div id="page">
+        <main>
+          <section id="mission-statement" class="ui vertical center aligned segment reference">
+
+  <div class="ui container">
+    <div class="ui grid">
+      <div class="twelve wide centered column">
+        <h1 class="ui inverted header">
+
+          <i class="sitemap icon"></i>Médicapi
+        </h1>
+        <h2 class="ui inverted header">
+          Base de données publique des médicaments de l'Agence nationale de sécurité du médicament et des produits de santé
+        </h2>
+
+        <a class="large ui secondary button" href="/doc" rel="noopener" target="_blank">
+          Documentation technique &nbsp;&nbsp;<i class="code icon"></i>
+        </a>
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div id="description" class="ui container">
+  <div class="ui mobile reversed stackable grid">
+    <div class="four wide column">
+      <div class="ui segment">
+
+        <div class="ui yellow left ribbon label" >
+          Expérimentale
+        </div>
+
+        <div class="ui relaxed divided list metadata">
+          <div class="item logoWrapper">
+            <div class="ui small image">
+              <img src="/img/logo-generique-startup-carre.jpg" alt="Médicapi" />
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="content">
+              <div class="header">Conditions d'utilisation</div>
+              <div class="description">
+
+                  OUVERT
+
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="content">
+              <div class="header">Contact</div>
+              <div class="description">
+
+                <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="item">
+            <div class="content">
+              <div class="header">Sources et partenaires</div>
+              <div class="description">
+                ANSM
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="twelve wide column">
+      <div class="ui secondary pointing menu">
+        <a class="item tab active" data-tab="funk">Description</a>
+        <a class="item tab" data-tab="tech">Technique</a>
+      </div>
+      <div class="ui active tab" data-tab="funk">
+        <section class="markdown-body">
+          <h2 id="prsentation">Présentation</h2>
+
+<p>Cette API expose les <a href="http://base-donnees-publique.medicaments.gouv.fr/telechargement.php">médicaments</a> référencés <a href="http://ansm.sante.fr/"><abbr title="Agence nationale de Sécurité du Médicament">ANSM</abbr></a> mises à jour le 24/06/2016.</p>
+
+<p>Ces données comportent, entre autre :</p>
+
+<ul>
+  <li>le nom des médicaments;</li>
+  <li>les formats de vente;</li>
+  <li>le prix;</li>
+  <li>le taux de remboursement par la sécurité sociale;</li>
+  <li>les alternatives génériques;</li>
+  <li>les avis sur le service rendu par la <abbr title="Haute Autorité de Santé">HAS</abbr>;</li>
+  <li>les avis sur l’amélioration du service rendu par la <abbr title="Haute Autorité de Santé">HAS</abbr>.</li>
+</ul>
+
+<p>Pour plus d’information sur ces données, vous pouvez utiliser la <a href="http://base-donnees-publique.medicaments.gouv.fr/docs/Contenu_et_format_des_fichiers_telechargeables_dans_la_BDM_v1.pdf">documentation</a> du jeux de données de l’ANSM.</p>
+
+<h2 id="condition-dutilisation">Condition d’utilisation</h2>
+
+<p>Les données de l’API sont ouvertes selon la <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence Ouverte/Open Licence</a> (Il est nécessaire de faire référence à l’origine des données dans vos services utilisant l’API).</p>
+
+<p>L’utilisation de l’API est libre. Merci de ne pas abuser dans son utilisation. Si vous avez des besoins massifs, merci de nous contacter.</p>
+
+<h2 id="demande-dvolution">Demande d’évolution</h2>
+
+<p>Si vous avez des besoins liés à l’utilisation de l’API, vous pouvez :</p>
+
+<ul>
+  <li>contribuer directement, le code est ouvert sur <a href="https://github.com/sgmap/api-medicaments">GitHub</a>;</li>
+  <li>envoyer un mail à <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#109;&#101;&#100;&#105;&#099;&#097;&#109;&#101;&#110;&#116;&#115;&#046;&#097;&#112;&#105;&#046;&#103;&#111;&#117;&#118;&#046;&#102;&#114;">&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#109;&#101;&#100;&#105;&#099;&#097;&#109;&#101;&#110;&#116;&#115;&#046;&#097;&#112;&#105;&#046;&#103;&#111;&#117;&#118;&#046;&#102;&#114;</a>.</li>
+</ul>
+
+        </section>
+      </div>
+      <div class="ui tab" data-tab="tech">
+
+          <section class="ui container">
+            <div class="swagger-section">
+   <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/jquery.mb.browser/0.1/jquery.mb.browser.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/jquery.slideto.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/jquery.wiggle.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/jquery.ba-bbq.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/handlebars-2.0.0.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/underscore-min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/backbone-min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/swagger-ui.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/highlight.7.3.pack.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/jsoneditor.min.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/marked.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lib/swagger-oauth.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lang/translator.js"></script>
+<script src="//cdn.rawgit.com/swagger-api/swagger-ui/v2.1.4/dist/lang/fr.js"></script>
+<script type="text/javascript">
+ window.swaggerUi = new SwaggerUi({
+  url: '/doc/api-meds-openapi.yml',
+  dom_id: 'swagger-ui-container',
+  onComplete: function(swaggerApi, swaggerUi){
+    if(window.SwaggerTranslator) {
+      window.SwaggerTranslator.translate();
+    }
+    $('pre code').each(function(i, e) {
+      hljs.highlightBlock(e)
+    });
+  },
+  docExpansion: 'list'
+ });
+
+ window.swaggerUi.load();
+</script>
+
+          </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<script>
+  $(function() {
+    $('.menu .item.tab').tab();
+
+  });
+</script>
+
+        </main>
+        <footer>
+  <div class="ui container">
+    <div class="ui stackable three column grid">
+      <div class="row">
+        <div class="column">
+          <div class="ui list">
+            <div class="item">
+              <i class="briefcase icon"></i>
+              <div class="content">
+                <a href="http://modernisation.gouv.fr/" rel="noopener" target="_blank">Une mission du SGMAP</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui list">
+            <div class="item">
+              <i class="university icon"></i>
+              <div class="content">
+                <a href="http://etatplateforme.modernisation.gouv.fr/" target="_blank">Un site de l'État plateforme</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui list">
+            <div class="item">
+              <i class="mail icon"></i>
+              <div class="content">
+                <a href="mailto:contact@medicaments.api.gouv.fr">contact@medicaments.api.gouv.fr</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="one column row">
+        <p class="column incubateur">
+          Fait avec &hearts; par <a href="https://beta.gouv.fr/" rel="noopener" target="_blank">l'Incubateur de services numériques</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div>
+    </div>
+    <script>
+    $('.ui.dropdown').dropdown();
+    </script>
+  </body>
+</html>
