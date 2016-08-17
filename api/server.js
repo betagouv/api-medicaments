@@ -30,11 +30,8 @@ function Server (options) {
   app.disable('x-powered-by');
   app.use('/', express.static(__dirname + '/swagger'));
 
-  const corsOptions = {
-    exposedHeaders: ['Range', 'Content-Range', 'X-Content-Range'],
-    credentials: true
-  };
-  app.use(cors(corsOptions));
+
+  app.use(cors());
 
   app.use(expressBunyanLogger({
     name: "requests",
