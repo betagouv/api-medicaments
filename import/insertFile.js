@@ -8,14 +8,13 @@ const WriterStream = require('./StreamWriter')
 module.exports = function({
                             name,
                             path,
-                            cbCluster,
-                            bucket
+                            db
                           }, callback) {
   const headers = require('./config/'+ name)
   const decoder = iconv.decodeStream('win1252')
   const input = fs.createReadStream(path)
   const transform = new TransformStream(headers)
-  const writer = new WriterStream(cbCluster, bucket )
+  const writer = new WriterStream(db)
   const parser = parse({
     delimiter: '\t',
     relax: true
