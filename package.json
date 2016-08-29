@@ -20,7 +20,6 @@
     "bunyan-blackhole": "1.1.1",
     "bunyan-format": "0.2.1",
     "cors": "2.7.1",
-    "couchbase": "2.2.1",
     "couchbase-promises": "2.1.0",
     "coveralls": "2.11.12",
     "csv-parse": "1.1.7",

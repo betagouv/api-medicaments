@@ -2,27 +2,24 @@ const expect = require('chai').expect
 const MedicamentsService = require('./../medicaments.service')
 const couchbase = require('couchbase-promises')
 const StandardError = require('standard-error')
-const deleteFromBucket = require('../../test/utils/deleteFromBucket')
 const sinon = require('sinon')
 const elasticsearch = require('elasticsearch')
 
 
 
 describe('Medicaments service', () => {
-  const cluster = new couchbase.Cluster('couchbase://127.0.0.1');
-  const bucket = cluster.openBucket('medicamentsTests');
   const client = new elasticsearch.Client()
   const index = "medicaments"
   const options = {
-    cb: {
-      bucket
+    medicaments: {
+
     },
     es: {
       client,
       index
     }
   }
-  const medicamentsService = new MedicamentsService(options);
+  let medicamentsService = new MedicamentsService(options);
 
   let sandbox = null;
   beforeEach(function () {
@@ -34,10 +31,6 @@ describe('Medicaments service', () => {
   });
 
   describe("When getting a medicaments by its cis",  () => {
-
-    beforeEach((done) => {
-      deleteFromBucket(bucket, 'medicamentsTests', done)
-    })
 
     describe("the document does't exist",  () => {
       it('return an error', (done) => {
@@ -56,8 +49,9 @@ describe('Medicaments service', () => {
 
       const cis = '45678873'
       const doc = { cis }
-      beforeEach((done) => {
-        bucket.upsert(cis, doc, done)
+      beforeEach(() => {
+        options.medicaments[cis] = doc
+        medicamentsService = new MedicamentsService(options);
       })
 
       it('return the doc', (done) => {
@@ -66,9 +60,7 @@ describe('Medicaments service', () => {
             expect(result).to.deep.equal(doc)
             done()
           })
-          .catch(function(e) {
-            done(e)
-          })
+          .catch(done)
       });
     })
   });

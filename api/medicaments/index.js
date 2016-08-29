@@ -1,6 +1,6 @@
 
-var express = require('express');
-var Controller = require('./medicaments.controller');
+const express = require('express');
+const Controller = require('./medicaments.controller');
 const validation = require('./medicaments.validation');
 
 var router = express.Router();

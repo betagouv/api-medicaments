@@ -1,7 +1,5 @@
 const proxyquire = require('proxyquire');
 const supertest = require('supertest');
-const couchbase = require('couchbase-promises')
-const deleteFromBucket = require('./deleteFromBucket')
 const deleteFromIndex = require('./deleteFromIndex')
 const elasticsearch = require('elasticsearch')
 
@@ -11,12 +9,9 @@ var Server = require('../../server');
 module.exports = function(){
   let server;
   const options = {
-    "port": 4566,
-    "appname": "api-medicament-test",
-    "cb": {
-      "connectionString": "couchbase://127.0.0.1",
-      "bucketName": "medicamentsTests"
-    },
+    port: 4566,
+    appname: "api-medicament-test",
+    medicamentsPath: "./test/resources/medicaments",
     es: {
       "host": "127.0.0.1:9201",
       index: 'medicamentstest'
@@ -39,13 +34,7 @@ module.exports = function(){
       .agent('http://localhost:' + server.getPort());
   };
 
-  const cluster = new couchbase.Cluster(options.cb.connectionString);
-  const bucket = cluster.openBucket(options.cb.bucketName);
   const client = new elasticsearch.Client(options.es)
-
-  beforeEach((done) => {
-    deleteFromBucket(bucket, options.cb.bucketName, done)
-  })
 
   beforeEach((done) => {
     deleteFromIndex(client, options.es.index, done)
@@ -53,7 +42,6 @@ module.exports = function(){
 
   return {
     api,
-    bucket,
     client,
     esIndice: options.es.index
   }

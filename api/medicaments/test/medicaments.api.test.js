@@ -13,10 +13,6 @@ describe('Medicaments API', () => {
     const cis = '45678873'
     const doc = { cis }
 
-    beforeEach((done) => {
-      bucket.upsert(cis, doc, done)
-    })
-
     it('replies the correct document', (done) => {
       api()
         .get('/api/medicaments/' + cis)
