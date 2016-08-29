@@ -1,21 +1,7 @@
 version: '2'
 
-networks:
-  cbNetwork:
-    driver: bridge
-
 services:
-
-  es:
-    build: ./elasticsearch
-    container_name: es.meds
-    hostname: es.meds
-    networks:
-      - cbNetwork
-    environment:
-      CB_USER: admin
-      CB_PASSWORD: tototiti
-      ES_USE_IPV4: "true"
+  api:
+    build: .
     ports:
-      - 9201:9200
-      - 9090:9091
+      - 3004:3004
