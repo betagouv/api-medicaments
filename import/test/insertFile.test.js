@@ -1,6 +1,5 @@
 const insertFile = require('../insertFile')
 const expect = require('chai').expect
-const couchbase = require('couchbase')
 
 
 describe('the full insert file', () => {

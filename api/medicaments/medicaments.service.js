@@ -1,12 +1,15 @@
 const StandardError = require('standard-error')
-
+const TextIndex = require('../search/index/Text')
+const { clone } = require('lodash')
 
 class MedicamentsService {
 
   constructor(options) {
     this.medicaments = options.medicaments
-    this.client = options.es.client
-    this.indice = options.es.index
+    this.nameIndex = new TextIndex('nom', {ref: 'cis'})
+    const medicamentsAsArray = Object.keys(this.medicaments)
+                                  .map((key) =>  this.medicaments[key])
+    this.nameIndex.load(medicamentsAsArray)
   }
 
   getByCis(cis) {
@@ -16,28 +19,15 @@ class MedicamentsService {
   }
 
   getByName(name){
-    const query = {
-      index: this.indice,
-      body:{
-        query:{
-          match:{
-            "doc.nom": name
-          }
-        }
-      }
-    }
-    return this.client.search(query).then((results) => {
-      return results.hits.hits.map(a => a._source.doc)
-    })
-  }
+    const results = this.nameIndex
+            .find(name)
+            .map((item) => {
+              const result = clone(this.medicaments[item.ref])
+              result._score = item.score
+              return result
+            })
 
-  search(q){
-    return this.client.search({
-      index: this.indice,
-      q
-    }).then((results) => {
-      return results.hits.hits.map(a => a._source.doc)
-    })
+    return Promise.resolve(results)
   }
 }
 

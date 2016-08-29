@@ -55,29 +55,6 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /medicaments/search:
-    get:
-      summary: récupérer des médicaments avec une recherche global
-      parameters:
-      - name: q
-        in: query
-        description: requête global de recherche
-        required: true
-        type: string
-
-      responses:
-        '200':
-          description: Une liste de médicament correspondant à la requête
-          schema:
-            type: array
-            items:
-              $ref: "#/definitions/Medicament"
-        default:
-          description: Erreur inattendue
-          schema:
-            $ref: '#/definitions/Error'
-
-
 definitions:
   Medicament:
     type: object

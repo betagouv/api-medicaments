@@ -1,6 +1,5 @@
 const iconv = require('iconv-lite');
 const stream = require('stream');
-const couchbase = require('couchbase');
 
 
 

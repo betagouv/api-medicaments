@@ -11,7 +11,7 @@ describe('Medicaments API', () => {
   describe("When requesting /api/medicaments/:cis",  () => {
 
     const cis = '45678873'
-    const doc = { cis }
+    const doc = { cis, nom: "doliprane" }
 
     it('replies the correct document', (done) => {
       api()
@@ -25,21 +25,17 @@ describe('Medicaments API', () => {
 
     const doc = {nom: 'doliprane'}
 
-    beforeEach((done) => {
-      client.create({
-        index: server.esIndice,
-        type: server.esIndice,
-        refresh: true,
-        body: {doc}
-      },done)
-    })
 
     describe("with correct query",  () => {
 
       it('replies with code 200 and matching medecines as body', (done) => {
         api()
           .get('/api/medicaments?nom=doliprane')
-          .expect(200, [doc], done)
+          .expect(200, [{
+            _score: 1,
+            cis: "45678873",
+            nom: "doliprane"
+          }], done)
       });
 
     });
@@ -53,37 +49,5 @@ describe('Medicaments API', () => {
       });
     });
 
-  });
-
-
-  describe("When requesting /api/medicaments/search",  () => {
-
-    const doc = {composant: 'doliprane'}
-
-    beforeEach((done) => {
-      client.create({
-        index: server.esIndice,
-        type: server.esIndice,
-        refresh: true,
-        body: {doc}
-      },done)
-    })
-
-    describe("with correct query",  () => {
-      it('replies with code 200 and matching medecines as body', (done) => {
-        api()
-          .get('/api/medicaments/search?q=doliprane')
-          .expect(200, [doc], done)
-      });
-    });
-
-    describe("with incorrect query",  () => {
-
-      it('replies with code 400', (done) => {
-        api()
-          .get('/api/medicaments/search')
-          .expect(400, done)
-      });
-    });
   });
 });
