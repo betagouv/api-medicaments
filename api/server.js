@@ -8,8 +8,6 @@ const expressBunyanLogger = require("express-bunyan-logger");
 const cors = require('cors');
 const formatError = require('./lib/middlewares/formatError')
 const routes = require('./routes');
-const couchbase = require('couchbase-promises')
-const elasticsearch = require('elasticsearch')
 
 module.exports = Server;
 
@@ -17,12 +15,8 @@ function Server (options) {
   var self = this;
   options = options || {};
   options.port = options.port || 0;
+  options.medicaments = require(options.medicamentsPath)
   options.logger = options.logger || emptylogger();
-  options.cb.cluster = new couchbase.Cluster(options.cb.connectionString);
-  options.cb.bucket = options.cb.cluster.openBucket(options.cb.bucketName);
-  options.es.client = new elasticsearch.Client({
-    host: options.es.host
-  })
   var logger = options.logger
   var app = express();
   app.set('port', options.port);

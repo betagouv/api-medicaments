@@ -40,28 +40,4 @@ describe('Medicaments validation', () => {
       medicamentsValidation.getByName(req, res, next)
     })
   })
-
-  describe('when requesting an medicament by name', () => {
-
-    function createSearch(q){
-      return {
-        query: {
-          q
-        }
-      }
-    }
-
-    it("should return an error if no name query parameter", (done) => {
-      const req = createSearch(null)
-
-      function next(err){
-        expect(err).to.exist
-        expect(err).to.deep.equal(new StandardError("le paramètre q est requis",{code:400}))
-        done()
-      }
-
-      medicamentsValidation.search(req, res, next)
-    })
-  })
-
 });

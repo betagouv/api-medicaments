@@ -5,10 +5,7 @@
     "level": "debug",
     "format": "simple"
   },
-  "cb": {
-    "connectionString": "couchbase://127.0.0.1",
-    "bucketName": "medicaments"
-  },
+  "medicamentsPath": "../data/medicaments",
   "es": {
     "host": "127.0.0.1:9201",
     "index": "medicaments"

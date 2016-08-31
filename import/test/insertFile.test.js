@@ -1,16 +1,13 @@
 const insertFile = require('../insertFile')
 const expect = require('chai').expect
-const couchbase = require('couchbase')
 
 
 describe('the full insert file', () => {
   const bucketName = 'medicamentsTests'
-  let bucket;
-  let cbCluster;
+  let db;
 
   beforeEach(() => {
-    cbCluster = new couchbase.Cluster('couchbase://127.0.0.1:8091');
-    bucket = cbCluster.openBucket(bucketName);
+    db = {}
   })
 
 
@@ -33,14 +30,12 @@ describe('the full insert file', () => {
       insertFile({
         name: fileName,
         path: __dirname + '/resources/' + fileName +'.txt',
-        bucket: bucketName
-      }, () => {
-        bucket.get(expectedDoc.cis, function(err, result) {
-          if (err) return  done(err);
-          expect(result.value).to.deep.equal(expectedDoc);
+        db
+      }, (err) => {
+          if(err) return done(err)
+          expect(db[expectedDoc.cis]).to.deep.equal(expectedDoc);
           done();
-        });
-      })
+      });
     })
   })
 })

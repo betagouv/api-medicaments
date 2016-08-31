@@ -1,66 +1,8 @@
 
 version: '2'
 
-networks:
-  cbNetwork:
-    driver: bridge
-
 services:
-  db:
-    image: couchbase:community
-    hostname: couchbase.meds
-    container_name: couchbase.meds
-    networks:
-      - cbNetwork
-    ports:
-      - 8091-8094:8091-8094
-      - 11210:11210
-
-  configuration:
-    image: couchbase:community
-    networks:
-      - cbNetwork
-    depends_on:
-      - db
-    container_name: config.meds
-    volumes:
-      - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
-    hostname: config.meds
-    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti medicaments es.meds medicaments
-
-  restoreData:
-    image: couchbase:community
-    hostname: restoreData.meds
-    container_name: restoreData.meds
-    depends_on:
-      - db
-    networks:
-      - cbNetwork
-    volumes:
-      - ./export:/var/export
-    command: bash -c "sleep 35 && cbrestore /var/export/ http://couchbase.meds:8091 --bucket-destination=medicaments -u admin -p tototiti"
   api:
     image: betagouv/api-meds-api
-    environment:
-      cb_connectionString: couchbase://couchbase.meds:8091
-      es_host: es.meds:9200
-    networks:
-      - cbNetwork
-    depends_on:
-      - db
-    hostname: api.med
-    container_name: api.med
     ports:
       - 3004:3004
-    command: bash -c "sleep 30 && npm start"
-
-  es:
-    image: betagouv/api-meds-es
-    container_name: es.meds
-    hostname: es.meds
-    networks:
-      - cbNetwork
-    environment:
-      CB_USER: admin
-      CB_PASSWORD: tototiti
-      ES_USE_IPV4: "true"

@@ -1,73 +1,7 @@
 version: '2'
 
-networks:
-  cbNetwork:
-    driver: bridge
-
 services:
-  couchbase:
-    image: couchbase:community
-    hostname: couchbase.meds
-    container_name: couchbase.meds
-    networks:
-      - cbNetwork
-    ports:
-      - 8091-8094:8091-8094
-      - 11210:11210
-
-  configuration:
-    image: couchbase:community
-    networks:
-      - cbNetwork
-    depends_on:
-      - couchbase
-    container_name: config.meds
-    volumes:
-      - ./bin/prepareDataBase.sh:/opt/couchbase/bin/cb-config.sh
-    hostname: config.meds
-    command: bash /opt/couchbase/bin/cb-config.sh couchbase.meds admin tototiti 'medicaments medicamentsTests' es.meds medicaments
-
-  import:
-    build:
-      context: .
-      dockerfile: DockerfileImport
-    hostname: import.meds
-    depends_on:
-      - couchbase
-    container_name: import.meds
-    networks:
-      - cbNetwork
-    command: bash -c "sleep 40 && ./bin/import --cb:connectionString=couchbase://couchbase.meds:8091"
-
-
   api:
-    build:
-      context: .
-      dockerfile: DockerfileAPI
-    networks:
-      - cbNetwork
-    environment:
-      LCB_CNTL_DETAILED_ERRCODES: development
-      cb_connectionString: couchbase://couchbase.meds:8091
-      es_host: es.meds:9200
-    depends_on:
-      - couchbase
-    hostname: api.meds
-    container_name: api.meds
-    command: bash -c "sleep 40 && npm start"
+    build: .
     ports:
-      - 3005:3004
-
-  es:
-    build: ./elasticsearch
-    container_name: es.meds
-    hostname: es.meds
-    networks:
-      - cbNetwork
-    environment:
-      CB_USER: admin
-      CB_PASSWORD: tototiti
-      ES_USE_IPV4: "true"
-    ports:
-      - 9201:9200
-      - 9090:9091
+      - 3004:3004

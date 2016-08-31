@@ -1,48 +1,33 @@
 const StandardError = require('standard-error')
-const couchbase = require('couchbase-promises')
-
+const TextIndex = require('../search/index/Text')
+const { clone } = require('lodash')
 
 class MedicamentsService {
+
   constructor(options) {
-    this.bucket = options.cb.bucket
-    this.client = options.es.client
-    this.indice = options.es.index
+    this.medicaments = options.medicaments
+    this.nameIndex = new TextIndex('nom', {ref: 'cis'})
+    const medicamentsAsArray = Object.keys(this.medicaments)
+                                  .map((key) =>  this.medicaments[key])
+    this.nameIndex.load(medicamentsAsArray)
   }
 
   getByCis(cis) {
-    return this.bucket.getAsync(cis)
-      .then(function(result) {
-        return result.value
-      }).catch(couchbase.Error, function(e) {
-        if (e.code === couchbase.errors.keyNotFound)
-          throw new StandardError("Le medicament n'a pas été trouvé", {code: 404})
-        throw e;
-      });
+    const med = this.medicaments[cis]
+    if(med) return Promise.resolve(med)
+    else return Promise.reject(new StandardError("Le medicament n'a pas été trouvé", {code: 404}))
   }
 
   getByName(name){
-    const query = {
-      index: this.indice,
-      body:{
-        query:{
-          match:{
-            "doc.nom": name
-          }
-        }
-      }
-    }
-    return this.client.search(query).then((results) => {
-      return results.hits.hits.map(a => a._source.doc)
-    })
-  }
+    const results = this.nameIndex
+            .find(name)
+            .map((item) => {
+              const result = clone(this.medicaments[item.ref])
+              result._score = item.score
+              return result
+            })
 
-  search(q){
-    return this.client.search({
-      index: this.indice,
-      q
-    }).then((results) => {
-      return results.hits.hits.map(a => a._source.doc)
-    })
+    return Promise.resolve(results)
   }
 }
 
