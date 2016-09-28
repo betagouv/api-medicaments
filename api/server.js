@@ -24,7 +24,10 @@ function Server (options) {
   app.disable('x-powered-by');
   app.use(cors());
   app.use('/doc', express.static(__dirname + '/swagger'));
-  app.use('/', express.static(__dirname + '/home'));
+
+  app.get('/', (req, res) => {
+    res.redirect('https://api.gouv.fr/api/medicapi.html');
+  });
 
   app.use(expressBunyanLogger({
     name: "requests",
