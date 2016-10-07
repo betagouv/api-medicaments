@@ -20,6 +20,12 @@ Expose the data behind [base-donnees-publique.medicaments.gouv.fr] with an API.
 
 ### Local
 
+Download datasets
+
+```bash
+./bin/download.sh
+```
+
 Import the files into the database
 
 ```bash
