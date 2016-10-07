@@ -93,6 +93,8 @@
 60044987	prescription réservée aux spécialistes et services HEMATOLOGIE
 60044987	prescription hospitalière
 60044987	liste I
+60045217	réservé à l'usage HOSPITALIER
+60045217	liste I
 60047143	réservé à l'usage HOSPITALIER
 60047143	liste II
 60047182	prescription réservée aux spécialistes et services NEUROLOGIE
@@ -720,6 +722,8 @@
 60361959	prescription réservée aux spécialistes et services HEMATOLOGIE
 60361959	prescription hospitalière
 60361959	liste I
+60362210	prescription hospitalière
+60362210	liste I
 60362986	liste I
 60363967	liste I
 60364161	liste I
@@ -785,6 +789,7 @@
 60385522	liste I
 60385682	liste I
 60386414	liste I
+60386460	liste I
 60386859	liste I
 60389531	liste I
 60391646	réservé à l'usage HOSPITALIER
@@ -838,6 +843,10 @@
 60414486	liste I
 60415442	liste I
 60418673	liste I
+60418716	prescription réservée aux spécialistes et services MEDECINE INTERNE
+60418716	prescription réservée aux spécialistes et services RHUMATOLOGIE
+60418716	prescription réservée aux spécialistes et services DERMATOLOGIE
+60418716	liste I
 60420681	liste I
 60423446	liste II
 60424338	liste I
@@ -991,6 +1000,12 @@
 60480212	prescription réservée aux médecins spécialistes ou qualifiés en médecine générale titulaires de la capacité de gérontologie
 60480212	prescription initiale annuelle réservée à certains spécialistes
 60480212	liste I
+60480810	prescription réservée aux spécialistes et services ENDOCRINOLOGIE
+60480810	prescription réservée aux spécialistes et services MALADIES METABOLIQUES
+60480810	prescription réservée aux spécialistes et services MEDECINE INTERNE
+60480810	prescription réservée aux spécialistes et services DIABETOLOGIE
+60480810	prescription initiale réservée à certains spécialistes
+60480810	liste I
 60481499	prescription initiale hospitalière annuelle
 60481499	prescription initiale par un médecin exerçant dans un service de dialyse à domicile
 60481499	liste I
@@ -1114,6 +1129,7 @@
 60534795	prescription hospitalière
 60534795	prescription par un médecin exerçant dans un établissement de transfusion sanguine
 60534795	liste I
+60535331	liste II
 60536159	liste II
 60536209	liste I
 60536383	prescription initiale hospitalière annuelle
@@ -1122,6 +1138,8 @@
 60537154	réservé à l'usage HOSPITALIER
 60537154	liste I
 60540264	liste I
+60542735	prescription initiale hospitalière annuelle
+60542735	liste I
 60542920	liste I
 60543292	liste I
 60546299	liste I
@@ -1223,12 +1241,11 @@
 60596494	liste I
 60598125	réservé à l'usage HOSPITALIER
 60598125	réservé à l'usage des centres d'HEMODIALYSE agréés
-60598520	médicament nécessitant une surveillance particulière pendant le traitement
-60598520	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
-60598520	prescription réservée aux spécialistes et services CANCEROLOGIE
-60598520	prescription réservée aux spécialistes et services HEMATOLOGIE
-60598520	prescription hospitalière
-60598520	liste I
+60598673	médicament nécessitant une surveillance particulière pendant le traitement
+60598673	prescription réservée aux spécialistes et services MEDECINE INTERNE
+60598673	prescription réservée aux spécialistes et services CARDIOLOGIE
+60598673	prescription initiale réservée à certains spécialistes
+60598673	liste I
 60599533	liste I
 60606586	liste I
 60608384	liste I
@@ -1335,6 +1352,11 @@
 60656055	liste I
 60657189	liste I
 60658234	liste I
+60658693	réservé à l'usage HOSPITALIER
+60658693	médicament nécessitant une surveillance particulière pendant le traitement
+60658693	prescription réservée aux spécialistes et services HEMATOLOGIE
+60658693	liste I
+60658693	prescription réservée aux médecins compétents en maladie du sang
 60658711	prescription initiale hospitalière semestrielle
 60658711	liste I
 60658750	liste I
@@ -1416,6 +1438,12 @@
 60683198	liste I
 60685480	liste I
 60688245	liste I
+60691017	médicament nécessitant une surveillance particulière pendant le traitement
+60691017	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+60691017	prescription réservée aux spécialistes et services CANCEROLOGIE
+60691017	prescription réservée aux spécialistes et services HEMATOLOGIE
+60691017	prescription hospitalière
+60691017	liste I
 60691750	liste I
 60692261	médicament nécessitant une surveillance particulière pendant le traitement
 60692261	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
@@ -1525,7 +1553,7 @@
 60728316	liste I
 60728597	prescription réservée aux spécialistes et services NEUROLOGIE
 60728597	médicament nécessitant une surveillance particulière pendant le traitement
-60728597	prescription initiale hospitalière semestrielle
+60728597	prescription initiale hospitalière annuelle
 60728597	liste I
 60728597	première administration en milieu hospitalier
 60728775	liste I
@@ -1543,6 +1571,8 @@
 60738303	liste I
 60739234	liste I
 60740076	liste I
+60740165	prescription hospitalière
+60740165	liste I
 60741986	prescription hospitalière
 60741986	liste I
 60742508	liste I
@@ -1606,6 +1636,7 @@
 60771794	réservé à l'usage HOSPITALIER
 60771794	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 60771794	liste II
+60772273	liste I
 60774228	liste I
 60774438	prescription limitée à 4 semaines
 60774438	délivrance fractionnée de 7 jours
@@ -1789,6 +1820,7 @@
 60887044	liste I
 60887980	liste I
 60889903	liste I
+60890617	liste I
 60890745	liste I
 60891060	liste I
 60892664	liste I
@@ -1922,6 +1954,7 @@
 60951632	prescription réservée aux spécialistes et services NEPHROLOGIE
 60951632	prescription initiale annuelle réservée à certains spécialistes
 60951632	liste I
+60952314	liste I
 60952937	liste I
 60954219	prescription réservée aux spécialistes et services HEPATO/GASTRO-ENTEROLOGIE
 60954219	prescription réservée aux spécialistes et services MEDECINE INTERNE
@@ -2287,6 +2320,13 @@
 61153021	réservé à l'usage HOSPITALIER
 61153021	liste I
 61153060	liste I
+61154803	prescription réservée aux spécialistes et services NEUROLOGIE
+61154803	médicament nécessitant une surveillance particulière pendant le traitement
+61154803	prescription réservée aux spécialistes et services PSYCHIATRIE
+61154803	prescription réservée aux spécialistes et services GERIATRIE
+61154803	prescription réservée aux médecins spécialistes ou qualifiés en médecine générale titulaires de la capacité de gérontologie
+61154803	prescription initiale annuelle réservée à certains spécialistes
+61154803	liste I
 61155773	liste I
 61157137	liste II
 61159056	liste I
@@ -2611,9 +2651,11 @@
 61333521	liste II
 61334096	liste I
 61334559	liste I
+61334872	liste I
 61335127	liste I
 61335351	liste I
 61335561	liste I
+61336275	liste I
 61337110	liste I
 61337509	liste II
 61337968	liste II
@@ -2817,6 +2859,7 @@
 61435939	prescription limitée à 4 semaines
 61435939	liste I
 61436304	liste I
+61436457	liste I
 61438166	prescription limitée à 4 semaines
 61438166	liste I
 61438967	réservé à l'usage professionnel DENTAIRE
@@ -3110,6 +3153,7 @@
 61606614	réservé à l'usage HOSPITALIER
 61606614	prescription réservée aux spécialistes autorisés RADIOPHARMACEUTIQUES
 61606614	liste I
+61607011	liste I
 61607132	réservé à l'usage HOSPITALIER
 61607132	liste I
 61607602	liste I
@@ -3235,6 +3279,10 @@
 61665534	liste II
 61665908	liste II
 61665915	liste I
+61666369	médicament nécessitant une surveillance particulière pendant le traitement
+61666369	prescription initiale hospitalière semestrielle
+61666369	prescription réservée aux spécialistes et services NEPHROLOGIE
+61666369	liste I
 61666846	prescription réservée aux spécialistes et services NEUROLOGIE
 61666846	prescription initiale annuelle réservée à certains spécialistes
 61666846	prescription réservée aux médecins exerçant dans les centres du sommeil
@@ -3262,6 +3310,7 @@
 61675795	liste I
 61675891	liste I
 61676413	liste I
+61676897	liste I
 61678318	liste I
 61678485	liste I
 61678930	liste I
@@ -3521,6 +3570,11 @@
 61796341	liste I
 61797183	liste II
 61799113	liste II
+61799519	médicament nécessitant une surveillance particulière pendant le traitement
+61799519	prescription réservée aux spécialistes et services MEDECINE INTERNE
+61799519	prescription réservée aux spécialistes et services CARDIOLOGIE
+61799519	prescription initiale réservée à certains spécialistes
+61799519	liste I
 61801023	liste I
 61801799	liste I
 61803031	liste I
@@ -3568,6 +3622,8 @@
 61834055	liste II
 61835424	réservé à l'usage HOSPITALIER
 61835424	liste I
+61835919	prescription hospitalière
+61835919	liste I
 61836202	liste I
 61836960	médicament nécessitant une surveillance particulière pendant le traitement
 61836960	prescription réservée aux spécialistes et services MEDECINE INTERNE
@@ -4106,6 +4162,8 @@
 62128302	liste II
 62129870	liste I
 62129888	liste I
+62130958	prescription initiale hospitalière annuelle
+62130958	liste I
 62132998	liste I
 62133655	liste II
 62134458	liste I
@@ -4293,6 +4351,7 @@
 62235902	prescription réservée aux spécialistes et services HEPATO/GASTRO-ENTEROLOGIE
 62235902	prescription réservée aux spécialistes et services MEDECINE INTERNE
 62235902	prescription initiale hospitalière annuelle
+62235902	prescription réservée aux spécialistes et services OPHTALMOLOGIE
 62235902	prescription réservée aux spécialistes et services RHUMATOLOGIE
 62235902	prescription réservée aux spécialistes et services DERMATOLOGIE
 62235902	liste I
@@ -4303,6 +4362,7 @@
 62238535	réservé à l'usage HOSPITALIER
 62238535	médicament nécessitant une surveillance particulière pendant le traitement
 62238535	liste I
+62240543	liste I
 62240657	liste I
 62240810	liste I
 62241816	liste I
@@ -4483,6 +4543,11 @@
 62345640	liste I
 62348800	liste I
 62349044	liste I
+62349731	médicament nécessitant une surveillance particulière pendant le traitement
+62349731	prescription réservée aux spécialistes et services MEDECINE INTERNE
+62349731	prescription réservée aux spécialistes et services CARDIOLOGIE
+62349731	prescription initiale réservée à certains spécialistes
+62349731	liste I
 62349845	liste II
 62351344	liste I
 62351604	liste I
@@ -4769,6 +4834,8 @@
 62483399	liste I
 62483787	prescription réservée aux spécialistes et services NEUROLOGIE
 62483787	liste I
+62484138	prescription limitée à 7 jours ou 28 jours
+62484138	stupéfiants
 62484259	liste I
 62485126	liste I
 62485208	liste I
@@ -4818,6 +4885,7 @@
 62505828	liste I
 62509125	liste I
 62509399	liste II
+62511293	liste I
 62512491	liste II
 62512769	liste I
 62513159	liste I
@@ -4851,6 +4919,12 @@
 62527632	liste I
 62527664	liste I
 62527956	liste I
+62529302	médicament nécessitant une surveillance particulière pendant le traitement
+62529302	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+62529302	prescription réservée aux spécialistes et services CANCEROLOGIE
+62529302	prescription réservée aux spécialistes et services HEMATOLOGIE
+62529302	prescription hospitalière
+62529302	liste I
 62531552	liste I
 62532227	liste I
 62533756	liste I
@@ -5284,6 +5358,7 @@
 62768665	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 62768665	prescription réservée aux spécialistes et services ANESTHESIE-REANIMATION
 62768665	liste I
+62768665	réservé à une structure d'assistance médicale mobile ou de rapatriement sanitaire
 62770890	liste I
 62770926	liste I
 62771825	liste I
@@ -5553,6 +5628,7 @@
 62924833	prescription hospitalière
 62924833	liste I
 62925789	liste I
+62926745	liste I
 62927128	liste I
 62927306	prescription limitée à 4 semaines
 62927306	délivrance fractionnée de 7 jours
@@ -5750,6 +5826,10 @@
 63025935	prescription limitée à 4 semaines
 63025935	délivrance fractionnée de 7 jours
 63025935	liste I et prescription sur ordonnance sécurisée
+63026453	médicament nécessitant une surveillance particulière pendant le traitement
+63026453	prescription initiale hospitalière semestrielle
+63026453	prescription réservée aux spécialistes et services NEPHROLOGIE
+63026453	liste I
 63026574	liste I
 63028155	liste II
 63028269	liste II
@@ -5776,6 +5856,7 @@
 63037738	liste I
 63040606	liste II
 63041569	liste I
+63042240	liste I
 63042991	prescription limitée à 12 semaines
 63042991	liste I
 63045724	liste II
@@ -5843,6 +5924,8 @@
 63076709	liste I
 63077978	liste I
 63078350	liste I
+63078560	prescription hospitalière
+63078560	liste I
 63079915	liste I
 63079979	liste I
 63080629	liste I
@@ -5940,6 +6023,7 @@
 63118574	liste I
 63119562	liste II
 63119726	liste I
+63121061	liste I
 63122238	prescription réservée aux spécialistes et services NEUROLOGIE
 63122238	médicament nécessitant une surveillance particulière pendant le traitement
 63122238	prescription réservée aux spécialistes et services PSYCHIATRIE
@@ -6052,7 +6136,7 @@
 63187944	liste I
 63191355	liste I
 63191743	liste I
-63191921	prescription initiale annuelle réservée à certains spécialistes
+63191921	prescription initiale hospitalière semestrielle
 63191921	prescription nécessitant préalablement le recueil de l’accord de soins du patient
 63191921	liste I
 63191921	pour les femmes susceptibles de procréer : surveillance particulière pendant le traitement
@@ -6069,6 +6153,7 @@
 63196690	liste I
 63196808	liste I
 63197187	liste I
+63197358	liste I
 63197760	prescription hospitalière
 63197760	liste I
 63198855	prescription limitée à 4 semaines
@@ -6158,6 +6243,10 @@
 63252648	liste I
 63255320	liste I
 63256529	liste I
+63257093	prescription réservée aux spécialistes et services MEDECINE INTERNE
+63257093	prescription réservée aux spécialistes et services RHUMATOLOGIE
+63257093	prescription réservée aux spécialistes et services DERMATOLOGIE
+63257093	liste I
 63259475	liste I
 63262521	liste I
 63264287	prescription initiale hospitalière semestrielle
@@ -6252,6 +6341,8 @@
 63322018	réservé à l'usage HOSPITALIER
 63322018	liste I
 63324001	liste I
+63324453	réservé à l'usage HOSPITALIER
+63324453	liste I
 63327759	liste I
 63329030	liste I
 63333858	liste II
@@ -6322,6 +6413,7 @@
 63364686	prescription réservée aux spécialistes et services HEPATO/GASTRO-ENTEROLOGIE
 63364686	prescription réservée aux spécialistes et services MEDECINE INTERNE
 63364686	prescription initiale hospitalière annuelle
+63364686	prescription réservée aux spécialistes et services OPHTALMOLOGIE
 63364686	prescription réservée aux spécialistes et services RHUMATOLOGIE
 63364686	prescription réservée aux spécialistes et services DERMATOLOGIE
 63364686	liste I
@@ -6343,6 +6435,7 @@
 63374666	liste I
 63374805	liste I
 63377114	liste I
+63377452	liste I
 63377491	liste I
 63378141	liste I
 63378604	liste I
@@ -6357,6 +6450,7 @@
 63380548	prescription réservée aux spécialistes et services HEMATOLOGIE
 63380548	prescription hospitalière
 63380548	liste I
+63381461	liste I
 63383793	liste I
 63386309	liste I
 63386476	liste I
@@ -6644,6 +6738,12 @@
 63532714	liste I
 63537049	réservé à l'usage HOSPITALIER
 63537049	liste I
+63538165	médicament nécessitant une surveillance particulière pendant le traitement
+63538165	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+63538165	prescription réservée aux spécialistes et services CANCEROLOGIE
+63538165	prescription réservée aux spécialistes et services HEMATOLOGIE
+63538165	prescription hospitalière
+63538165	liste I
 63538286	liste I
 63538400	liste I
 63539769	liste I
@@ -6659,6 +6759,11 @@
 63547132	réservé à l'usage HOSPITALIER
 63547132	liste I
 63547997	liste II
+63549069	prescription initiale hospitalière annuelle
+63549069	renouvellement de la prescription réservé aux spécialistes en MEDECINE INTERNE
+63549069	renouvellement de la prescription réservé aux spécialistes en DERMATOLOGIE
+63549069	renouvellement de la prescription réservé aux spécialistes en RHUMATOLOGIE
+63549069	liste I
 63549158	liste I
 63550908	liste I
 63551390	liste II
@@ -6734,6 +6839,7 @@
 63597509	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 63597509	prescription réservée aux spécialistes et services ANESTHESIE-REANIMATION
 63597509	liste I
+63597509	réservé à une structure d'assistance médicale mobile ou de rapatriement sanitaire
 63597651	prescription réservée aux spécialistes et services NEUROLOGIE
 63597651	médicament nécessitant une surveillance particulière pendant le traitement
 63597651	liste I
@@ -6823,6 +6929,7 @@
 63631623	liste I
 63633204	liste I
 63633802	liste I
+63638906	liste I
 63640017	liste I
 63641749	liste I
 63643038	liste I
@@ -6916,6 +7023,7 @@
 63688528	prescription initiale annuelle réservée à certains spécialistes
 63688528	liste I
 63688631	liste I
+63688752	prescription hospitalière
 63688752	liste I
 63689021	médicament nécessitant une surveillance particulière pendant le traitement
 63689021	prescription réservée aux spécialistes et services ENDOCRINOLOGIE
@@ -7261,6 +7369,12 @@
 63891279	liste I
 63893230	liste I
 63894193	liste I
+63894229	médicament nécessitant une surveillance particulière pendant le traitement
+63894229	prescription initiale hospitalière semestrielle
+63894229	renouvellement de la prescription réservé aux spécialistes en ONCOLOGIE MEDICALE
+63894229	renouvellement de la prescription réservé aux spécialistes en HEMATOLOGIE
+63894229	liste I
+63894229	renouvellement de la prescription réservé aux spécialistes en CANCEROLOGIE
 63894243	prescription initiale hospitalière annuelle
 63894243	liste I
 63894720	prescription hospitalière
@@ -7445,6 +7559,7 @@
 63976886	liste II
 63976904	liste II
 63978314	liste I
+63978976	liste I
 63981755	liste I
 63983293	prescription limitée à 4 semaines
 63983293	délivrance fractionnée de 14 jours
@@ -7564,8 +7679,11 @@
 64060864	liste I
 64060871	liste I
 64061553	liste I
+64061788	prescription hospitalière
+64061788	liste I
 64061941	liste II
 64062452	liste I
+64062783	liste I
 64063337	liste I
 64064179	liste I
 64064987	liste I
@@ -8015,7 +8133,6 @@
 64316662	prescription initiale hospitalière annuelle
 64316662	liste I
 64317593	liste I
-64317757	liste II
 64318663	prescription hospitalière
 64318663	liste I
 64318859	prescription hospitalière
@@ -8209,6 +8326,7 @@
 64406451	liste I
 64406647	liste I
 64407934	liste II
+64408331	liste I
 64408662	liste I
 64409255	liste I
 64410713	médicament nécessitant une surveillance particulière pendant le traitement
@@ -8225,6 +8343,7 @@
 64419210	liste I
 64419235	liste I
 64419694	liste I
+64420401	liste I
 64421236	réservé à l'usage HOSPITALIER
 64421236	liste I
 64421453	prescription hospitalière
@@ -8526,6 +8645,10 @@
 64597615	liste I
 64598083	liste I
 64598133	liste II
+64598514	médicament nécessitant une surveillance particulière pendant le traitement
+64598514	prescription initiale hospitalière semestrielle
+64598514	prescription réservée aux spécialistes et services NEPHROLOGIE
+64598514	liste I
 64598731	réservé à l'usage HOSPITALIER
 64598731	médicament nécessitant une surveillance particulière pendant le traitement
 64598731	prescription réservée aux spécialistes et services HEMATOLOGIE
@@ -8590,6 +8713,7 @@
 64631754	liste I
 64631925	liste I
 64632646	liste I
+64633851	liste I
 64634501	liste II
 64634871	liste I
 64634939	réservé à l'usage HOSPITALIER
@@ -8617,6 +8741,12 @@
 64640867	liste II
 64641403	réservé à l'usage professionnel DENTAIRE
 64641403	liste I
+64643856	médicament nécessitant une surveillance particulière pendant le traitement
+64643856	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+64643856	prescription réservée aux spécialistes et services CANCEROLOGIE
+64643856	prescription réservée aux spécialistes et services HEMATOLOGIE
+64643856	prescription hospitalière
+64643856	liste I
 64644709	prescription limitée à 4 semaines
 64644709	délivrance fractionnée de 7 jours
 64644709	liste I
@@ -8835,6 +8965,7 @@
 64760254	prescription réservée aux spécialistes et services PSYCHIATRIE
 64760254	prescription initiale réservée à certains spécialistes
 64760254	liste I
+64762173	liste I
 64762878	réservé à l'usage HOSPITALIER
 64762878	prescription réservée aux spécialistes et services MEDECINE INTERNE
 64762878	prescription réservée aux spécialistes et services HEMATOLOGIE
@@ -8857,6 +8988,7 @@
 64781800	prescription hospitalière
 64781800	liste I
 64783616	liste I
+64784675	liste I
 64784789	liste I
 64784981	liste I
 64786078	liste II
@@ -9049,6 +9181,7 @@
 64891741	liste I
 64892010	réservé à l'usage HOSPITALIER
 64892010	liste I
+64892042	liste I
 64892672	liste I
 64892925	liste I
 64893386	liste I
@@ -9094,6 +9227,8 @@
 64914777	liste I
 64915021	liste I
 64916550	liste I
+64917677	prescription initiale hospitalière annuelle
+64917677	liste I
 64919265	liste I
 64920036	liste I
 64921540	liste I
@@ -9266,6 +9401,11 @@
 65005479	prescription hospitalière
 65005479	liste I
 65005721	liste I
+65007804	prescription initiale hospitalière annuelle
+65007804	renouvellement de la prescription réservé aux spécialistes en MEDECINE INTERNE
+65007804	renouvellement de la prescription réservé aux spécialistes en DERMATOLOGIE
+65007804	renouvellement de la prescription réservé aux spécialistes en RHUMATOLOGIE
+65007804	liste I
 65008233	liste I
 65009278	liste I
 65011037	liste I
@@ -9455,13 +9595,13 @@
 65103126	liste I
 65103140	liste I
 65104648	liste I
+65106581	prescription hospitalière
 65106581	liste I
 65107402	liste I
 65108237	liste II
 65109314	liste II
 65109823	liste I
 65109848	liste II
-65109937	réservé à l'usage HOSPITALIER
 65109937	liste I
 65110505	liste II
 65111532	prescription hospitalière
@@ -9571,6 +9711,8 @@
 65164182	liste I
 65164218	liste I
 65165035	liste I
+65166404	prescription hospitalière
+65166404	liste I
 65167545	liste I
 65168309	liste I
 65168323	liste I
@@ -9702,6 +9844,8 @@
 65248246	prescription réservée aux spécialistes et services HEMATOLOGIE
 65248246	prescription hospitalière
 65248246	liste I
+65249056	prescription hospitalière
+65249056	liste I
 65249953	liste II
 65250375	médicament nécessitant une surveillance particulière pendant le traitement
 65250375	prescription initiale réservée à certains spécialistes
@@ -10840,6 +10984,7 @@
 65819403	liste I
 65819809	liste I
 65820028	liste II
+65820455	liste I
 65820487	liste I
 65820494	liste I
 65821685	prescription limitée à 4 semaines
@@ -11095,6 +11240,7 @@
 65959572	réservé à l'usage HOSPITALIER
 65959572	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 65959572	liste I
+65959736	liste I
 65960119	liste II
 65963599	réservé à l'usage HOSPITALIER
 65963599	liste I
@@ -11275,6 +11421,10 @@
 66055182	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 66055182	liste I
 66055766	liste I
+66056341	médicament nécessitant une surveillance particulière pendant le traitement
+66056341	prescription initiale hospitalière semestrielle
+66056341	prescription réservée aux spécialistes et services NEPHROLOGIE
+66056341	liste I
 66056398	liste I
 66057308	liste I
 66058449	liste I
@@ -11323,6 +11473,7 @@
 66083840	liste II
 66085108	liste I
 66085510	liste II
+66086110	liste I
 66086181	liste I
 66086562	médicament nécessitant une surveillance particulière pendant le traitement
 66086562	prescription réservée aux spécialistes et services MEDECINE INTERNE
@@ -11393,6 +11544,7 @@
 66123498	liste II
 66124970	liste I
 66125684	liste I
+66126291	liste I
 66127233	liste I
 66127952	liste II
 66128246	réservé à l'usage professionnel DENTAIRE
@@ -11468,6 +11620,7 @@
 66170398	renouvellement de la prescription réservé aux spécialistes en DERMATOLOGIE
 66170398	liste I
 66170487	liste I
+66170633	liste I
 66170989	liste I
 66171354	liste I
 66173953	liste I
@@ -11490,6 +11643,11 @@
 66182379	liste I
 66184743	prescription limitée à 12 semaines
 66184743	liste I
+66185667	médicament nécessitant une surveillance particulière pendant le traitement
+66185667	prescription réservée aux spécialistes et services MEDECINE INTERNE
+66185667	prescription réservée aux spécialistes et services CARDIOLOGIE
+66185667	prescription initiale réservée à certains spécialistes
+66185667	liste I
 66186993	médicament nécessitant une surveillance particulière pendant le traitement
 66186993	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
 66186993	prescription réservée aux spécialistes et services CANCEROLOGIE
@@ -11581,6 +11739,11 @@
 66238461	liste I
 66238671	liste I
 66241856	liste I
+66242285	médicament nécessitant une surveillance particulière pendant le traitement
+66242285	prescription réservée aux spécialistes et services MEDECINE INTERNE
+66242285	prescription réservée aux spécialistes et services CARDIOLOGIE
+66242285	prescription initiale réservée à certains spécialistes
+66242285	liste I
 66242328	liste II
 66243024	prescription limitée à 4 semaines
 66243024	délivrance fractionnée de 14 jours
@@ -11764,7 +11927,10 @@
 66322048	liste I
 66322824	liste I
 66324519	liste I
+66325208	prescription initiale hospitalière annuelle
+66325208	liste I
 66325311	liste I
+66325425	liste I
 66325927	liste I
 66327091	liste II
 66328396	réservé à l'usage HOSPITALIER
@@ -11863,6 +12029,8 @@
 66377201	liste I
 66377564	liste I
 66377660	liste I
+66378381	prescription hospitalière
+66378381	liste I
 66379729	liste I
 66379896	liste I
 66380934	liste II
@@ -12053,6 +12221,7 @@
 66488123	liste I
 66488803	liste I
 66489175	liste I
+66490117	liste I
 66490708	liste I
 66494311	liste I
 66494553	liste II
@@ -12157,6 +12326,11 @@
 66547625	délivrance réservée aux pharmacies à usage intérieur
 66547625	liste I
 66550571	liste I
+66552355	médicament nécessitant une surveillance particulière pendant le traitement
+66552355	prescription réservée aux spécialistes et services MEDECINE INTERNE
+66552355	prescription réservée aux spécialistes et services CARDIOLOGIE
+66552355	prescription initiale réservée à certains spécialistes
+66552355	liste I
 66553119	liste I
 66553941	liste I
 66553998	prescription réservée aux spécialistes et services ENDOCRINOLOGIE
@@ -12191,6 +12365,9 @@
 66565153	liste I
 66565705	liste II
 66566668	liste I
+66567115	réservé à l'usage HOSPITALIER
+66567115	prescription réservée aux spécialistes autorisés RADIOPHARMACEUTIQUES
+66567115	liste I
 66567204	liste I
 66567236	liste I
 66567617	liste I
@@ -12266,6 +12443,7 @@
 66602114	prescription réservée aux spécialistes et services HEMATOLOGIE
 66602114	liste I
 66603383	liste I
+66603508	liste II
 66604318	liste I
 66604389	liste I
 66605249	liste I
@@ -12523,6 +12701,8 @@
 66751955	liste I
 66752651	liste I
 66754951	liste I
+66755220	prescription initiale hospitalière annuelle
+66755220	liste I
 66758647	liste I
 66760146	liste I
 66763498	liste I
@@ -12818,6 +12998,7 @@
 66889194	liste II
 66889582	liste I
 66890143	liste I
+66892062	prescription hospitalière
 66892062	liste I
 66892450	réservé à l'usage HOSPITALIER
 66892450	liste I
@@ -12837,6 +13018,7 @@
 66898948	liste I
 66900267	liste I
 66900840	liste I
+66901771	liste I
 66902357	liste I
 66902841	liste I
 66903345	liste I
@@ -12866,6 +13048,8 @@
 66923928	prescription hospitalière
 66923928	liste I
 66925249	liste I
+66927104	prescription initiale hospitalière semestrielle
+66927104	liste I
 66927702	liste I
 66928163	liste I
 66928996	liste I
@@ -12904,6 +13088,7 @@
 66955317	liste I
 66956006	liste I
 66958014	liste I
+66958039	liste I
 66958808	médicament nécessitant une surveillance particulière pendant le traitement
 66958808	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
 66958808	prescription réservée aux spécialistes et services CANCEROLOGIE
@@ -13224,6 +13409,12 @@
 67116396	liste II
 67117128	liste I
 67119549	liste I
+67119741	médicament nécessitant une surveillance particulière pendant le traitement
+67119741	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+67119741	prescription réservée aux spécialistes et services CANCEROLOGIE
+67119741	prescription réservée aux spécialistes et services HEMATOLOGIE
+67119741	prescription hospitalière
+67119741	liste I
 67120494	liste I
 67121475	réservé à l'usage HOSPITALIER
 67121475	prescription réservée aux spécialistes CHIRURGIE
@@ -13232,6 +13423,7 @@
 67122310	prescription initiale hospitalière annuelle
 67122310	prescription initiale par un médecin exerçant dans un service de dialyse à domicile
 67122310	liste I
+67122698	liste I
 67122812	liste I
 67122869	liste I
 67124126	liste I
@@ -13266,6 +13458,7 @@
 67132571	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 67132571	prescription réservée aux spécialistes et services ANESTHESIE-REANIMATION
 67132571	liste I
+67132571	réservé à une structure d'assistance médicale mobile ou de rapatriement sanitaire
 67132888	réservé à l'usage HOSPITALIER
 67132888	liste I
 67133883	médicament nécessitant une surveillance particulière pendant le traitement
@@ -13813,6 +14006,7 @@
 67418601	liste I
 67419870	liste II
 67421017	liste I
+67421348	liste I
 67421960	réservé à l'usage professionnel DENTAIRE
 67421960	liste II
 67422076	prescription initiale hospitalière annuelle
@@ -13893,6 +14087,7 @@
 67459644	liste I
 67460027	liste I
 67461225	liste II
+67461691	liste I
 67461944	prescription hospitalière
 67461944	liste I
 67464342	liste I
@@ -13963,6 +14158,8 @@
 67498202	liste I
 67499717	liste II
 67501673	liste I
+67502120	prescription hospitalière
+67502120	liste I
 67503464	prescription réservée aux spécialistes et services NEUROLOGIE
 67503464	prescription réservée aux spécialistes et services PEDIATRIE
 67503464	médicament nécessitant une surveillance particulière pendant le traitement
@@ -14161,6 +14358,7 @@
 67600995	liste I
 67602487	liste I
 67607160	liste I
+67607954	liste I
 67608173	liste I
 67608305	médicament nécessitant une surveillance particulière pendant le traitement
 67608305	prescription réservée aux spécialistes et services MEDECINE INTERNE
@@ -14619,6 +14817,7 @@
 67840385	liste II
 67840531	liste I
 67841804	liste I
+67846776	prescription hospitalière
 67846776	liste I
 67848834	liste I
 67849644	liste II
@@ -14962,6 +15161,7 @@
 68036348	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 68036348	liste I
 68036693	liste I
+68037642	liste I
 68037788	liste I
 68038922	réservé à l'usage HOSPITALIER
 68038922	prescription réservée aux spécialistes autorisés RADIOPHARMACEUTIQUES
@@ -15172,6 +15372,10 @@
 68174071	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 68174071	liste I
 68174324	liste II
+68174566	médicament nécessitant une surveillance particulière pendant le traitement
+68174566	prescription initiale hospitalière semestrielle
+68174566	prescription réservée aux spécialistes et services NEPHROLOGIE
+68174566	liste I
 68176656	liste I
 68176802	prescription limitée à 12 semaines
 68176802	liste I
@@ -15387,6 +15591,7 @@
 68310952	liste I
 68311278	prescription hospitalière
 68311278	liste I
+68311602	liste I
 68311716	liste I
 68311869	liste I
 68312871	liste II
@@ -15546,6 +15751,8 @@
 68402767	liste I
 68403716	liste I
 68403965	liste I
+68405756	réservé à l'usage HOSPITALIER
+68405756	liste I
 68407287	liste II
 68408115	médicament nécessitant une surveillance particulière pendant le traitement
 68408115	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
@@ -15608,6 +15815,8 @@
 68432874	liste I
 68434003	liste I
 68434537	liste I
+68435468	prescription limitée à 7 jours ou 28 jours
+68435468	stupéfiants
 68435557	liste I
 68435621	liste I
 68435767	liste I
@@ -15620,6 +15829,12 @@
 68438457	prescription réservée aux médecins compétents en maladie du sang
 68439420	liste I
 68439865	liste I
+68440390	médicament nécessitant une surveillance particulière pendant le traitement
+68440390	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
+68440390	prescription réservée aux spécialistes et services CANCEROLOGIE
+68440390	prescription réservée aux spécialistes et services HEMATOLOGIE
+68440390	prescription hospitalière
+68440390	liste I
 68440789	liste II
 68441909	liste I
 68443237	liste I
@@ -15837,6 +16052,8 @@
 68566033	liste II
 68566407	médicament nécessitant une surveillance particulière pendant le traitement
 68566407	liste I
+68566713	prescription hospitalière
+68566713	liste I
 68567217	liste I
 68568244	liste I
 68569129	liste I
@@ -16276,6 +16493,9 @@
 68851751	liste I
 68852180	liste I
 68853282	liste I
+68853909	prescription initiale hospitalière semestrielle
+68853909	délivrance réservée aux pharmacies à usage intérieur
+68853909	liste I
 68855251	réservé à l'usage HOSPITALIER
 68855251	prescription réservée aux spécialistes autorisés RADIOPHARMACEUTIQUES
 68855251	liste I
@@ -16553,6 +16773,8 @@
 69021160	liste I
 69021776	liste I
 69022401	liste I
+69022853	prescription hospitalière
+69022853	liste I
 69023916	liste I
 69024053	liste I
 69025080	liste I
@@ -16599,6 +16821,7 @@
 69042418	prescription réservée aux spécialistes et services HEMATOLOGIE
 69042418	prescription hospitalière
 69042418	liste I
+69043954	liste I
 69044807	liste I
 69046402	liste I
 69046879	liste I
@@ -16635,6 +16858,7 @@
 69067841	liste I
 69067955	prescription hospitalière
 69067955	liste I
+69068936	liste I
 69069251	liste I
 69070563	liste I
 69070613	liste I
@@ -16671,6 +16895,8 @@
 69084488	liste I
 69085330	liste I
 69085348	liste I
+69086891	réservé à l'usage HOSPITALIER
+69086891	liste I
 69087947	médicament nécessitant une surveillance particulière pendant le traitement
 69087947	prescription réservée aux spécialistes et services ONCOLOGIE MEDICALE
 69087947	prescription réservée aux spécialistes et services CANCEROLOGIE
@@ -16766,6 +16992,7 @@
 69139187	prescription hospitalière
 69139187	liste I
 69139269	liste II
+69139714	liste I
 69140061	liste I
 69140809	réservé à l'usage HOSPITALIER
 69140809	prescription réservée aux spécialistes et services MEDECINE INTERNE
@@ -16785,7 +17012,6 @@
 69148236	liste II
 69149605	liste I
 69149683	liste I
-69150358	réservé à l'usage HOSPITALIER
 69150358	liste I
 69151830	liste I
 69152302	liste I
@@ -17058,6 +17284,7 @@
 69278297	réservé à l'usage en situation d'urgence selon l'article R5121-96 du code de la santé publique
 69278297	prescription réservée aux spécialistes et services ANESTHESIE-REANIMATION
 69278297	liste I
+69278297	réservé à une structure d'assistance médicale mobile ou de rapatriement sanitaire
 69278991	liste I
 69279246	liste I
 69279253	réservé à l'usage HOSPITALIER
@@ -17168,6 +17395,8 @@
 69340279	liste I
 69340304	liste I
 69340610	liste I
+69342796	prescription initiale hospitalière annuelle
+69342796	liste I
 69345098	liste II
 69346054	prescription réservée aux spécialistes et services NEUROLOGIE
 69346054	médicament nécessitant une surveillance particulière pendant le traitement
@@ -18050,6 +18279,8 @@
 69812744	liste I
 69812744	prescription réservée aux médecins compétents en maladie du sang
 69814229	liste II
+69816080	prescription hospitalière
+69816080	liste I
 69816276	liste I
 69816582	liste I
 69816760	liste I
