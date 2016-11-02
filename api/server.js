@@ -26,7 +26,7 @@ function Server (options) {
   app.use('/doc', express.static(__dirname + '/swagger'));
 
   app.get('/', (req, res) => {
-    res.redirect('https://api.gouv.fr/api/medicapi.html');
+    res.redirect('https://api.gouv.fr/explorer/medicapi/');
   });
 
   app.use(expressBunyanLogger({
