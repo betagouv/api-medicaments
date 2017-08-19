@@ -9,7 +9,7 @@ module.exports = function(options){
   const medicamentsController = new Controller(options);
   router.get('/:cis', medicamentsController.get.bind(medicamentsController));
 
-  router.get('/', validation.getByName, medicamentsController.getByName.bind(medicamentsController));
+  router.get('/', validation.getByQuery, medicamentsController.getByQuery.bind(medicamentsController));
 
   return router
 }

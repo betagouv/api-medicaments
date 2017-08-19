@@ -10,7 +10,8 @@ Expose the data behind [base-donnees-publique.medicaments.gouv.fr] with an API.
 ### Local
 
 * [Node.js](http://nodejs.org)
-* [Couchbase](www.couchbase.com)
+
+Use `npm install` to download prerequisites nodejs packages.
 
 ### Production
 

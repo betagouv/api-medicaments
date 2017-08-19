@@ -35,12 +35,17 @@ paths:
 
   /medicaments:
     get:
-      summary: récupérer des médicaments par nom
+      summary: récupérer des médicaments par nom ou CIP13
       parameters:
       - name: nom
         in: query
         description: nom d'un médicament
-        required: true
+        required: false
+        type: string
+      - name: CIP13
+        in: query
+        description: code présentation d'un médicament (code barre)
+        required: false
         type: string
 
       responses:
