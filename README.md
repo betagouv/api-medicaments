@@ -3,7 +3,8 @@
 [![CircleCI](https://circleci.com/gh/sgmap/api-medicaments/tree/master.svg?style=svg)](https://circleci.com/gh/sgmap/api-medicaments/tree/master)
 [![Coverage Status](https://coveralls.io/repos/github/sgmap/api-medicaments/badge.svg?branch=ci)](https://coveralls.io/github/sgmap/api-medicaments?branch=master)
 
-Expose the data behind [base-donnees-publique.medicaments.gouv.fr] with an API.
+Expose the data behind [base-donnees-publique.medicaments.gouv.fr] with an API.  
+Data source: https://www.data.gouv.fr/fr/datasets/base-de-donnees-publique-des-medicaments-base-officielle/
 
 ## Prerequisites
 
