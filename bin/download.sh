@@ -22,10 +22,10 @@ function dl(){
 }
 
 if [ -d "$dirTarget" ]; then
- 	echo "Download directory is $dirTarget";
+    echo "Download directory is $dirTarget";
 else
-	echo "Create $dirTarget directory";
-	mkdir -p $dirTarget;
+    echo "Create $dirTarget directory";
+    mkdir -p $dirTarget;
 fi
 
 dl $CIS;
@@ -37,3 +37,4 @@ dl $HAS_LiensPageCT;
 dl $CIS_GENER;
 dl $CIS_CPD;
 dl $CIS_InfoImportantes;
+
