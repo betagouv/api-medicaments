@@ -1,6 +1,5 @@
 const stream = require('stream');
 
-
 class TransformStream extends stream.Transform {
   constructor(config) {
     super({
@@ -33,13 +32,11 @@ function parseField(rawValue, parseOption, key) {
     case 'float':
       return parseFloat(rawValue)
     case 'boolean':
-      if(rawValue === "Oui" || rawValue === "oui") return true;
-      if(rawValue === "Non" || rawValue === "non") return false;
+      if(rawValue.toLowerCase() === "oui") return true;
+      if(rawValue.toLowerCase() === "non") return false;
       throw new Error("Impossible to parse the boolean : \"" + rawValue + "\"")
     case 'array':
-      return rawValue
-                .split(';')
-                .map((item) => { return item.trim() })
+        return rawValue.split(';').map((item) => {return item.trim()});
     case 'enum':
       return parseOption.options[rawValue]
     default:
