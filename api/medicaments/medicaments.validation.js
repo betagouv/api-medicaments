@@ -2,12 +2,12 @@ const StandardError = require('standard-error')
 
 
 const medicamentsValidation = {
-  getByName
+  getByQuery
 }
 
-function getByName(req,res,next){
-  if (!req.query.nom){
-    return next(new StandardError("le paramètre nom est requis", { code: 400 }))
+function getByQuery(req,res,next){
+  if ((!req.query.nom) && (!req.query.CIP13)){
+    return next(new StandardError("un des paramètres nom ou CIP13 est requis", { code: 400 }))
   }
   next()
 }

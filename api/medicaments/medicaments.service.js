@@ -10,6 +10,17 @@ class MedicamentsService {
     const medicamentsAsArray = Object.keys(this.medicaments)
                                   .map((key) =>  this.medicaments[key])
     this.nameIndex.load(medicamentsAsArray)
+	// CIP index
+	var cipIndex = {};
+	medicamentsAsArray.forEach(function(med){
+		const cis = med['cis'];
+		if ('presentation' in med) {
+		med['presentation'].forEach(function(pres) {
+			if (pres['CIP13']) cipIndex[pres['CIP13']] = cis;
+		});
+		}
+	  });
+	this.cipIndex = cipIndex;
   }
 
   getByCis(cis) {
@@ -28,6 +39,11 @@ class MedicamentsService {
             })
 
     return Promise.resolve(results)
+  }
+
+
+  getByCIP13(cip){
+	  return this.getByCis(this.cipIndex[cip])
   }
 }
 

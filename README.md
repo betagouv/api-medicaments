@@ -14,7 +14,8 @@ Data source: https://www.data.gouv.fr/fr/datasets/base-de-donnees-publique-des-m
 ### Local
 
 * [Node.js](http://nodejs.org)
-* [Couchbase](www.couchbase.com)
+
+Use `npm install` to download prerequisites nodejs packages.
 
 ### Production
 
